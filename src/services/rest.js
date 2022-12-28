@@ -277,8 +277,8 @@ const getGenerals = (lang) => {
   }
   return Http.get(`${ENV.API_URL}/general`, { ...data });
 };
-
 export default {
+
   uploadImage,
   //USER
   login,

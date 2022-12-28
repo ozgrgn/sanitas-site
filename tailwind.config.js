@@ -1,30 +1,19 @@
-import daisyui from "daisyui";
 export default {
   content: ["./index.html", "./src/**/*.{svelte,js,ts}"],
-  plugins: [daisyui],
-  daisyui: {
-    styled: true,
-    themes:
-      [
-        {
-          mytheme: {
-            "primary": "#005b70",
-            "secondary": "#4394a8",
-            "alternative": "#72b2ed",
-            "accent": "#fff",
-            "neutral": "#3D4451",
-            "base-100": "#FFFFFF",
-            "info": "#3ABFF8",
-            "success": "#36D399",
-            "warning": "#FBBD23",
-            "error": "#F87272",
-          }
-        }
-      ],
-    base: false,
-    utils: true,
-    logs: true,
-    rtl: false,
-    prefix: "",
+  theme: {
+    extend: {
+      colors: {
+        primary:'#005b70',
+        secondary:'#4394a8',
+        whatsapp:'#25D366',
+        custom: {
+          gcolor: "#fcbf02",
+          tcolor: "#00b67b",
+          fcolor: "#4267b2",
+        },
+      },
+    },
   },
+
+
 };

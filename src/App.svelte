@@ -27,6 +27,7 @@
   });
 </script>
 
-<Router>
+<Router primary={false}>
+
   <Route path="/:lang/*" component={Routes} />
 </Router>
