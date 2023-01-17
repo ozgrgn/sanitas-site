@@ -42,7 +42,7 @@
   };
 </script>
 
-<div class="hero-contact-form ">
+<div class="hero-contact-form sticky top-5">
   <div class="contact-form h-full py-5 px-5 leading-4 text-primary rounded-2xl shadow-xl border border-gray-10 w-full">
     <h3 class="form-header text-xl font-bold ">Get Best Price in <br>a Minute</h3>
     <form class="contact__form">

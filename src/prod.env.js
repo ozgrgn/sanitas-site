@@ -1,5 +1,5 @@
 export const env = {
-  API_URL: "https://stage-api.biletmio.com",
-  SOCKET: "https://stage-api.biletmio.com"
+  API_URL: "https://stage-api..com",
+  SOCKET: "https://stage-api..com"
 };
 export default env

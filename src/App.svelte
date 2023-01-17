@@ -2,7 +2,7 @@
 <script>
   import Routes from "./routes/Routes.svelte";
   import { Router, Route, navigate } from "svelte-navigator";
-  import { lang } from "$services/store";
+  import { lang,user } from "$services/store";
   import { onDestroy, onMount } from "svelte";
   import RestService from "$services/rest";
 
@@ -25,6 +25,8 @@
       lang.set(splittedPathName[1]);
     }
   });
+
+
 </script>
 
 <Router primary={false}>

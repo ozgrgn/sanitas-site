@@ -8,6 +8,7 @@
   import Footer from "./Web/Footer/Footer.svelte";
   import TreatmentsGroupIndex from "./Web/TreatmentsGroupPage/TreatmentsGroupIndex.svelte";
   import TreatmentDetailIndex from "./Web/TreatmentPage/TreatmentDetailIndex.svelte";
+  import AboutIndex from "./Web/About/AboutIndex.svelte";
   export let langugage;
   console.log($lang, "lakaknana", langugage);
 </script>
@@ -21,6 +22,8 @@
   <Router>
     <Route path="login" component={Login} />
     <Route path="home" component={Index} />
+    <Route path="about" component={AboutIndex} />
+
     <Route path="treatments/*" component={TreatmentDetailIndex} />
     <Route path="groups/*" component={TreatmentsGroupIndex} />
 

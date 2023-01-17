@@ -1,7 +1,8 @@
 <script>
   import Svg from "../../../assets/svg.json";
-  import { useLocation, navigate, useParams } from "svelte-navigator";
+  import { useLocation, link } from "svelte-navigator";
   import { lang } from "$services/store";
+  
 
   const location = useLocation();
   console.log($lang, "şşkşk");
@@ -25,9 +26,9 @@
       <img class="" src="/assets/img/logo/sanitas-logo.png" alt="" />
     </a>
     <div class="flex font-medium justify-evenly self-center w-full px-28">
-      <div class=""><span>Home </span></div>
-      <div class="">About Us</div>
-      <div class="">FAQ</div>
+      <a use:link href={`/${$lang}/home`} class=""><span>Home </span></a>
+      <a use:link href={`/${$lang}/about`} class="">About Us</a>
+      <a use:link href={`/${$lang}/faq`} class="">FAQ</a>
       <div class="dropdown inline-block relative z-20">
         <button
           class="bg-white rounded inline-flex items-center rounded-xl"

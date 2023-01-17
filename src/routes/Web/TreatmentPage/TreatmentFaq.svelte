@@ -5,7 +5,7 @@
   </script>
   
   <section class="bg-white bg-gray-50">
-    <div class="container py-10 mx-auto w-3/5">
+    <div class="container py-10 mx-auto ">
       <h3
         class="text-3xl font-semibold text-center text-gray-800 lg:text-4xl text-white"
       >

@@ -114,5 +114,6 @@
     başarı oranına sahip bir tedavi yöntemi olduğunu göstermektedir.
   </h2>
 </div>
-  <TreatmentFaq {faqs} />
+<div class="sticky top-0 h-full">
+  <TreatmentFaq {faqs} /></div>
 </div>

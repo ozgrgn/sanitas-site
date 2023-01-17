@@ -1,5 +1,4 @@
 import { writable } from "svelte/store";
-import moment from "moment"
 
 
 
@@ -15,11 +14,6 @@ lang.subscribe((value) => {
   localStorage.setItem("lang", value);
 });
 
-
-export const seats = writable(JSON.parse(localStorage.getItem("seats")) || null);
-seats.subscribe((value) => {
-  localStorage.setItem("seats", JSON.stringify(value));
-});
 
 
 export const modal = writable(null);
