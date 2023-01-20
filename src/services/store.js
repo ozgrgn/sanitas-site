@@ -1,6 +1,11 @@
 import { writable } from "svelte/store";
 
-
+export const groups = writable(null);
+export const treatments = writable(null);
+export const general = writable(null);
+export const translate = writable(null);
+export const features = writable(null);
+export const langs = writable(null);
 
 const _lang =
   localStorage.getItem("lang") && localStorage.getItem("lang") != "null"

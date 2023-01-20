@@ -13,7 +13,7 @@
   on:focus
   on:blur>
   {#if value.hover}
-  <img transition:fade={{ y: 200, duration: 200 }} class="bg-primary absolute w-full rounded-t-md" src={value.image} alt="" />
+  <img transition:fade={{ y: 200, duration: 200 }} class="bg-primary absolute w-full h-40 object-fit rounded-t-md" src={value.image} alt="" />
 <div class="absolute opacity-70 h-full bg-primary w-full"></div>
 {/if}
   <div
@@ -21,11 +21,10 @@
   >
     <div class="">
       <h2 class=" text-xl tracking-tight text-left">
-        {value.name}
+        {value.title}
       </h2>
       <p class="text-left text-sm pt-3">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem
-        voluptatem obcaecati!
+      {value.description}
       </p>
     </div>
     <a class="text-left flex" href="/"

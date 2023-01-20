@@ -2,7 +2,8 @@
   import { link } from "svelte-navigator";
   import { lang } from "$services/store";
 
-
+export let group
+console.log(group,"group")
   let translate= 
   {
     "_id": "63874fd636ef0bab62589ea1",
@@ -45,20 +46,19 @@
     "note": "Note"
 }
 </script>
-{#if translate}
+{#if translate && group}
 <div class="flex text-lg text-white/90 pt-48">
   <a use:link href={`/${$lang}/home`}> {translate.homePage} </a>
   <div class=" w-1 h-1 m-3 mt-3 bg-white/50 rounded-full" />
-  {translate.treatments}
+ Departments
   <div class=" w-1 h-1 m-3 mt-3 bg-white/50 rounded-full" />
-  rsgs
+  {group?.title}
 </div>
 <div
   class="text-6xl text-white/90 tracking-tight w-fit pt-8 border-b-4 border-white/80 h-28 "
 >
-  <span class="">Plastic Surgery</span>
+  <span class="">{group?.title}</span>
 </div>
 <p class="text-white/90 w-1/2 pt-2 md:pt-8">
-  Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. 
-</p>
+{group?.description2}</p>
 {/if}

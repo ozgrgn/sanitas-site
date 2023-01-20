@@ -1,6 +1,6 @@
 <script>
   import { Router, Route } from "svelte-navigator";
-  import { lang } from "$services/store";
+  import { lang,groups,treatments,features } from "$services/store";
   import Login from "./Login.svelte";
   import Top from "./Web/Header/Top.svelte";
   import Header from "./Web/Header/Header.svelte";
@@ -19,16 +19,17 @@
     <Header />
   </div>
 <div class="min-h-screen h-full">
+  {#if $groups && $treatments}
   <Router>
-    <Route path="login" component={Login} />
     <Route path="home" component={Index} />
     <Route path="about" component={AboutIndex} />
 
-    <Route path="treatments/*" component={TreatmentDetailIndex} />
-    <Route path="groups/*" component={TreatmentsGroupIndex} />
+    <Route path="treatments/:treatmentId" component={TreatmentDetailIndex} />
+    <Route path="departments/:groupId" component={TreatmentsGroupIndex} />
 
     <Route path="" component={Index} />
   </Router>
+  {/if}
 </div>
   fallalalal----{$lang}----
 <Footer/>

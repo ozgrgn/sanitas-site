@@ -1,11 +1,10 @@
 <script>
     import Svg from "../assets/svg.json";
 
-  export let icon;
+  export let svg;
   export let header;
   export let text;
   export let color;
-  export let size;
   export let svgColor;
    export let iconClass;
   export let customClass;
@@ -20,18 +19,15 @@
         class="pt-1 {svgColor}"
         width="60"
         height="60"
-        viewBox="0 0 {size}"
+        viewBox="0 0 128 128 "
       >
-        {@html Svg[icon]}
+        {@html svg}
       </svg>
     </div>
-    <div class="col-span-3  flex flex-col  ">
-      <h3 class="font-extrabold ">{header}</h3>
-      <p class="hidden lg:flex text-sm lg:text-md">{text}</p>
-      <a class="text-left flex pt-2" href="/"
-      >{@html Svg[readMoreButton]}
-      <p class="pl-1 text-sm italic ">Read More</p>
-    </a>
+    <div class="col-span-3 flex flex-col">
+      <h3 class="font-extrabold h-10 leading-5 flex flex-col justify-center ">{header}</h3>
+      <p class="hidden lg:flex text-sm lg:text-md text-ellipsis overflow-hidden h-16">{text}</p>
+     
     </div>
   </div>
 </div>

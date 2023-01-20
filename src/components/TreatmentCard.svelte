@@ -1,12 +1,13 @@
 <script>
   import Svg from "../assets/svg.json";
+  import { link } from "svelte-navigator";
+  import { lang } from "$services/store";
 
   export let value;
   console.log(value, "aa");
-  export let icon = "hotel";
 </script>
-
-<div class="flex flex-col relative rounded-md shadow-lg">
+{#if value}
+<a use:link href="/{$lang}/treatments/{value.perma} "class="flex flex-col relative rounded-md shadow-lg">
   <img class="w-full rounded-t-md " src={value.image} alt="" />
   <div
     class="absolute border-2 border-white/90 bg-secondary shadow-2xl drop-shadow rounded-xl bg-white 2xl:top-52 xl:top-52 lg:top-36 top-24 left-8 lg:h-16 lg:w-16 h-16 w-16 flex flex-col justify-center items-center"
@@ -19,7 +20,7 @@
       fill="#fff"
       viewBox="0 0 128 128"
     >
-      {@html Svg[icon]}
+      {@html value.svg}
     </svg>
   </div>
   <div
@@ -27,11 +28,10 @@
   >
     <div class="">
       <h2 class=" text-2xl text-primary tracking-tight text-left">
-        {value.name}
+        {value.title}
       </h2>
       <p class="text-left text-primary text-sm pt-3">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem
-        voluptatem obcaecati!
+        {value.shortDesc}
       </p>
     </div>
     <a class="text-left flex" href="/"
@@ -39,4 +39,5 @@
       <p class="pl-1 text-sm italic ">Read More</p>
     </a>
   </div>
-</div>
+</a>
+{/if}
