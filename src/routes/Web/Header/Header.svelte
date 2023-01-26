@@ -20,10 +20,10 @@
 /> -->
 <div class="container mx-auto h-20 border-b flex flex-col justify-center ">
   <div class="flex justify-between">
-    <a href="/" class="z-10">
+    <a use:link href="/" class="z-20">
       <img class="" src="/assets/img/logo/sanitas-logo.png" alt="" />
     </a>
-    <div class="flex font-medium justify-evenly self-center w-full px-28 z-20">
+    <div class="flex font-medium justify-evenly self-center w-full px-28 z-50">
       {#if $translate}
       <a use:link href={`/${$lang}/home`} class=""><span>{$translate.homePage} </span></a>
       <a use:link href={`/${$lang}/about`} class="">{$translate.about}</a>
@@ -39,19 +39,19 @@
           </div>
         </button>
         <ul
-          class="dropdown-content pt-4 bg-white rounded-xl absolute hidden text-primary w-48"
+          class="dropdown-content pt-4 bg-white rounded-xl absolute hidden text-primary w-52 z-50"
         >
         {#if $groups}
           {#each $groups as group}
             {#if !group.department}
               <li class="">
-                <a class="py-2 px-4 block whitespace-no-wrap" href= {`/${$lang}/treatments/${group.perma}`}
+                <a use:link class="py-2 mx-4 border-b border-secondary/10 block whitespace-no-wrap" href= {`/${$lang}/departments/${group.perma}`}
                   >{group.title}</a
                 >
               </li>
             {:else}
               <li class="dropdown">
-                <a class="py-2 px-4 block whitespace-no-wrap" href= {`/${$lang}/departments/${group.perma}`}
+                <a use:link class="py-2 mx-4  border-b border-secondary/10 block whitespace-no-wrap" href= {`/${$lang}/departments/${group.perma}`}
                   >
                   <div class="flex">
                     <span>{group.title} </span>
@@ -61,15 +61,15 @@
                   </a
                 >
                 <ul
-                  class="dropdown-content bg-white rounded absolute hidden text-primary pl-5 ml-40 -mt-10"
+                  class="dropdown-content bg-white  rounded absolute hidden text-primary  ml-52 -mt-12"
                 >
                 {#if $treatments}
                   {#each $treatments as treatment}
                     {#if treatment.group == group._id}
                       <li>
-                        <a
-                          class="pr-2 pl-4 py-2 block whitespace-no-wrap w-40"
-                          href="/#">
+                        <a use:link
+                          class="pr-2 mx-4 border-b border-secondary/10 py-2 block whitespace-no-wrap w-40"
+                          href={`/${$lang}/treatments/${treatment.perma}`}>
                           {treatment.title}</a
                         >
                       </li>

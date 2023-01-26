@@ -1,12 +1,21 @@
 <script>
   import MainSliderDesk from "$components/Sliders/MainSliderDesk.svelte";
-  import Title from "$components/Title.svelte";
-  import Svg from "../../../assets/svg.json";
   import Box from "./Box.svelte";
   import Faq from "./Faq.svelte";
   import Reviews from "./Reviews.svelte";
   import HomeTreatmentsGroup from "./HomeTreatmentsGroup.svelte";
+  import { lang } from "$services/store";
+  import RestService from "$services/rest";
 
+
+  let sliders;
+
+const getSliders = async () => {
+  let response = await RestService.getSliders($lang);
+  sliders = response["sliders"];
+  console.log(sliders);
+};
+getSliders();
   let faqs = [
     {
       _id:1,
@@ -35,9 +44,9 @@
 
   ];
 </script>
-
+{#if sliders}
 <div class="relative">
-  <MainSliderDesk />
+  <MainSliderDesk {sliders} />
 
   <div class="absolute w-full -mt-14">
     <Box />
@@ -48,3 +57,4 @@
 <Faq faqs={faqs} />
 </div>
 <Reviews></Reviews>
+{/if}

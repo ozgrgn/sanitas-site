@@ -1,17 +1,7 @@
 <script>
   import { Splide, SplideSlide } from "@splidejs/svelte-splide";
-  import { lang } from "$services/store";
-  import RestService from "$services/rest";
   import "@splidejs/svelte-splide/css";
-  let sliders;
-
-  console.log($lang,"lang")
-  const getSliders = async () => {
-    let response = await RestService.getSliders($lang);
-    sliders = response["sliders"];
-    console.log(sliders);
-  };
-  getSliders();
+export let sliders
   import Svg from "../../assets/svg.json";
 </script>
 

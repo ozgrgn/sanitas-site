@@ -1,5 +1,4 @@
 <script>
-  import PhoneInput from "$components/Form/PhoneInput.svelte";
   import { perma } from "$services/store";
   import { lang } from "$services/store";
   let name;
@@ -78,11 +77,10 @@
         </li>
         <li>
           <div class="form-control w-full mt-2">
-            <PhoneInput
+            <input
               bind:value={phone}
-              bind:dialCode
     
-              customClass={" h-12  border-0 placeholder-blueGray-300 text-blueGray-600 bg-white  text-sm  focus:outline-none "}
+              class={" h-12  border-0 placeholder-blueGray-300 text-blueGray-600 bg-white  text-sm  focus:outline-none "}
               placeholder="Telefon numaranız"
               required={true}
               name={"phone"}

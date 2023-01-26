@@ -19,6 +19,7 @@
     if (required) {
       validations = [...validations, requiredValidator()];
     }
+  
     [validity, validate] = createFieldValidator(...validations);
   
     const validityUnsub = validity.subscribe((_validity) => {

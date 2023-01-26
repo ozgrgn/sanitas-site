@@ -69,7 +69,7 @@ console.log($features,"featuressss")
    
   </div>
   <div class="-mt-28 z-20 bg-white shadow-2xl col-span-2">
-    <div class="bg-primary border-2 border-white flex flex-col justify-center w-full text-white text-center text-2xl h-16"><h3>{$translate?.our_services}</h3></div>
+    <div class="bg-primary border-2 border-white flex flex-col justify-center w-full text-white text-center text-2xl h-16"><h3>{$translate?.treatments}</h3></div>
     <AboutTreatmentGroup/>
   </div>
 </div>

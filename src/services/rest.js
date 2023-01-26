@@ -85,6 +85,18 @@ const getGenerals = (lang) => {
   }
   return Http.get(`${ENV.API_URL}/general`, { ...data });
 };
+
+const getTreatmentViaGroupId = (groupId) => {
+  return Http.get(`${ENV.API_URL}/treatment/group/${groupId}`);
+};
+const getGroupViaPerma = (perma) => {
+  return Http.get(`${ENV.API_URL}/group/perma/${perma}`);
+};
+
+const getTreatmentViaPerma = (perma) => {
+  return Http.get(`${ENV.API_URL}/treatment/perma/${perma}`);
+};
+
 export default {
 
 //LANGS
@@ -100,8 +112,12 @@ getLangs,
 
   //groups
   getGroups,
+  getGroupViaPerma,
+
   //treatmetn
   getTreatments,
+  getTreatmentViaGroupId,
+  getTreatmentViaPerma,
   //about
   getAbouts,
   //translate

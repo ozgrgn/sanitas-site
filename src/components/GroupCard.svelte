@@ -7,7 +7,7 @@
   console.log(value, "aa");
 </script>
 {#if value}
-<a use:link href="/{$lang}/{value.department?"departments":"treatments"}/{value.perma} "class="flex flex-col relative rounded-md shadow-lg">
+<a use:link href="/{$lang}/departments/{value.perma} "class="flex flex-col relative rounded-md shadow-lg">
 
   <img class="w-full rounded-t-md " src={value.image} alt="" />
   <div

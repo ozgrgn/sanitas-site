@@ -1,5 +1,5 @@
 export const env = {
-  API_URL: " https://sanitas-backend.herokuapp.com",
+  API_URL:  "http://localhost:3000",
 
 };
 export default env
