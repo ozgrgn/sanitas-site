@@ -1,6 +1,6 @@
 <script>
   import { perma } from "$services/store";
-  import { lang } from "$services/store";
+  import { lang,translate } from "$services/store";
   let name;
   let phone;
   let email;
@@ -40,17 +40,17 @@
     console.log(json);
   };
 </script>
-
+{#if $translate}
 <div class="hero-contact-form sticky top-5">
   <div class="contact-form h-full py-5 px-5 leading-4 text-primary rounded-2xl shadow-xl border border-gray-10 w-full">
-    <h3 class="form-header text-xl font-bold ">Get Best Price in <br>a Minute</h3>
+    <h3 class="form-header text-xl font-bold ">{$translate.form_header1}<br>{$translate.form_header2}</h3>
     <form class="contact__form">
       <div
         class="alert my-5 alert-success contact__msg {formStatus == true
           ? 'flex'
           : 'hidden'}"
       >
-        Your message was sent successfully.
+      {$translate.sent}
       </div>
       <div
         class="alert-warn mt-3 contact__msg {warn == true ? '' : 'hidden'}"
@@ -70,7 +70,7 @@
               "
             type="text"
             name="name"
-            placeholder="Name Surname"
+            placeholder={$translate.name}
             autocomplete="name"
             bind:value={name}
           />
@@ -81,9 +81,9 @@
               bind:value={phone}
     
               class={" h-12  border-0 placeholder-blueGray-300 text-blueGray-600 bg-white  text-sm  focus:outline-none "}
-              placeholder="Telefon numaranız"
+              placeholder={$translate.phone}
               required={true}
-              name={"phone"}
+              name="phone"
               autocomplete="phone"
             />
           </div>
@@ -91,7 +91,7 @@
        
         <li>
           <button type="button" class="mt-8 bg-primary rounded-xl text-white h-10 px-5 font-bold text-center cursor-pointer capitalize shadow-xl" on:click={addRes}>
-            Get Free Quote</button
+            {$translate.form_button}</button
           >
           <!-- <input
               type="submit"
@@ -105,7 +105,7 @@
     </form>
   </div>
 </div>
-
+{/if}
 <style>
   .hero-contact-form {
     text-align: -webkit-center;

@@ -1,7 +1,8 @@
 <script>
   import { Splide, SplideSlide } from "@splidejs/svelte-splide";
   import "@splidejs/svelte-splide/css";
-export let sliders
+  import { translate, general } from "$services/store";
+  export let sliders;
   import Svg from "../../assets/svg.json";
 </script>
 
@@ -45,23 +46,31 @@ export let sliders
               </p>
             </div>
             <div class="mt-10 flex justify-end">
-              <button
-                class="min-h-16 w-52 py-3 px-2 rounded-sm border-2 border-primary text-sm font-semibold px-6 bg-transparent hover:border-primary hover:bg-primary hover:text-white text-primary"
-                >FREE CONSULTATION</button
-              >
-              <button
-                class="flex py-3 px-2 rounded-sm items-center justify-center text-sm font-semibold min-h-16 w-52 border-primary text-md bg-primary text-white hover:bg-whatsapp hover:border-whatsapp ml-4"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="pt-1"
-                  width="24"
-                  height="20"
-                  fill="#fff"
-                  viewBox="0 0 70 70"
+              {#if translate}
+                <button
+                  class="min-h-16 w-52 py-3 px-2 rounded-sm border-2 border-primary text-sm font-semibold px-6 bg-transparent hover:border-primary hover:bg-primary hover:text-white text-primary"
+                  >{$translate.book_an_appointment}</button
                 >
-                  {@html Svg.whatsapp}
-                </svg> WHATSAPP</button
-              >
+              {/if}
+              {#if general}
+                <a
+                  href="https://api.whatsapp.com/send?phone={$general.whatsapp}"
+                >
+                  <button
+                    class="flex py-3 px-2 rounded-sm items-center justify-center text-sm font-semibold min-h-16 w-52 border-primary text-md bg-primary text-white hover:bg-whatsapp hover:border-whatsapp ml-4"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="pt-1"
+                      width="24"
+                      height="20"
+                      fill="#fff"
+                      viewBox="0 0 70 70"
+                    >
+                      {@html Svg.whatsapp}
+                    </svg> WHATSAPP</button
+                  >
+                </a>
+              {/if}
             </div>
           </div>
         </div>

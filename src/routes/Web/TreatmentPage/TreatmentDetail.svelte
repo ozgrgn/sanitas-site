@@ -37,6 +37,6 @@
   {@html treatment.text}
   </div>
   <div class="sticky top-0 h-full">
-    <TreatmentFaq {faqs} title={treatment.title} />
+    <TreatmentFaq {faqs} treatment={treatment._id} />
   </div>
 </div>

@@ -3,64 +3,23 @@
 
   import Svg from "../../../assets/svg.json";
   import LangSelect from "../../../components/Form/LangSelect.svelte";
-  import { lang,features,translate,general,groups } from "$services/store";
-
-
-  let treatments = [
-    {
-      image: "/assets/img/cards/ws1.jpg",
-      name: "Treatment One",
-      icon: "svg....",
-      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem voluptatem obcaecati!",
-      perma: "/",
-    },
-    {
-      image: "/assets/img/cards/ws1.jpg",
-      name: "Treatment One",
-      icon: "svg....",
-      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem voluptatem obcaecati!",
-      perma: "/",
-    },
-    {
-      image: "/assets/img/cards/ws1.jpg",
-      name: "Treatment One",
-      icon: "svg....",
-      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem voluptatem obcaecati!",
-      perma: "/",
-    },
-    {
-      image: "/assets/img/cards/ws1.jpg",
-      name: "Treatment One",
-      icon: "svg....",
-      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem voluptatem obcaecati!",
-      perma: "/",
-    },
-    {
-      image: "/assets/img/cards/ws1.jpg",
-      name: "Treatment One",
-      icon: "svg....",
-      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem voluptatem obcaecati!",
-      perma: "/",
-    },
-    {
-      image: "/assets/img/cards/ws1.jpg",
-      name: "Treatment One",
-      icon: "svg....",
-      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem voluptatem obcaecati!",
-      perma: "/",
-    },
-  ];
+  import { lang,treatments,translate,general,groups,langs } from "$services/store";
+  let newLang;
+  console.log($translate, "translate");
   const langTrigger = (_lang) => {
-    document.documentElement.setAttribute("lang", _lang);
-    setTimeout(() => {
-      lang.set(_lang);
-      window.location.reload();
-    }, 1); // cause svelte is faster than browser
+    lang.set(_lang);
+    let splittedPathName = window.location.pathname.split("/");
+    console.log(splittedPathName, "splittedPathName");
+    navigate(
+      `/${_lang}/${splittedPathName[2] ? splittedPathName[2] : ""}${
+        splittedPathName[3] ? "/" + splittedPathName[3] : ""
+      }`
+    );
   };
 </script>
-
+{#if $general && $translate}
 <footer class="relative bg-primary" aria-labelledby="footer-heading">
-  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+  <div class="max-w-7xl mx-auto py-12 ">
     <div class="pb-8 md:grid xl:grid-cols-6 xl:gap-2">
       <div class="md:grid md:grid-cols-2 gap-16 xl:col-span-4">
         <div class="first">
@@ -115,7 +74,7 @@
                           href="/{$lang}/departments/{$groups[i+4].perma}"
                           class="text-base text-gray-200 hover:text-white"
                         >
-                          {$groups[i + 4].name}
+                          {$groups[i + 4].title}
                         </a>
                       </li>
                     {/if}
@@ -132,7 +91,7 @@
             <h3
               class="text-sm font-semibold text-white tracking-wider uppercase"
             >
-              contact
+              {$translate.contact}
             </h3>
             {#if $general}
               <div class="px-2">
@@ -155,8 +114,20 @@
       </div>
       <div class="mt-12 xl:mt-0">
         <h3 class="text-sm font-semibold text-white tracking-wider uppercase">
-          Dil
+          {$translate.language}
         </h3>
+        {#if $langs}
+        <LangSelect
+          value={newLang}
+          change={(value) => langTrigger(value)}
+          values={$langs}
+          title={"Lang"}
+          valuesKey={"lang"}
+          valuesTitleKey={"lang"}
+          required={false}
+          customClass={"uppercase text-sm mt-5 bg-transparent w-20 appearance-none shadow-none border border-primary rounded-md pl-3 text-white focus:outline-none focus:ring-white focus:border-white sm:text-sm "}
+        />
+      {/if}
       </div>
     </div>
 
@@ -218,3 +189,4 @@
     </div>
   </div>
 </footer>
+{/if}

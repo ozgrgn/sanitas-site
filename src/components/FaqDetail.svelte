@@ -21,9 +21,9 @@
         on:keydown
         class="flex items-center justify-between w-full p-4"
       >
-        <h3 class="font-semibold text-primary">
-          {faq.q}
-        </h3>
+        <h2 class="font-semibold text-primary">
+          {faq.question}
+        </h2>
 
         <span class="text-gray-400 bg-gray-200 rounded-full">
           {#if faq.active}
@@ -63,7 +63,7 @@
         <div in:fly={{ y: 200, duration: 200 }}>
           <hr class="border-gray-200" />
           <p class="py-8 px-4 text-sm text-primary">
-            {faq.a}
+            {faq.answer}
           </p>
         </div>
       {/if}

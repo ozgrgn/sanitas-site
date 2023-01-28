@@ -19,9 +19,9 @@
 
 {#if $general}
   <div
-    class="h-12 bg-secondary text-sm text-white flex flex-col justify-center cursor-pointer "
+    class="h-12 bg-secondary text-sm text-white flex flex-col justify-center cursor-pointer z-[1000] "
   >
-    <div class="container mx-auto flex justify-between">
+    <div class="container mx-auto flex justify-between z-[1000]">
       <div class="flex justify-around self-center">
         <a class="flex" href="tel:{$general?.phone1}">
           <svg
@@ -36,7 +36,7 @@
           </svg> Tel:{$general?.phone1}
         </a>
         <span class="px-3">|</span>
-        <a class="flex" href="mailto:info@sanitastravel.com.tr"
+        <a class="flex" href="https://api.whatsapp.com/send?phone={$general.whatsapp}"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             class="pt-1 "
@@ -46,7 +46,7 @@
             viewBox="0 0 80 80"
           >
             {@html Svg.whatsapp}
-          </svg>Whatsapp:{$general?.whatsapp}
+          </svg>Whatsapp
         </a>
         <span class="px-3">|</span>
         <a class="flex" href="mailto:info@sanitastravel.com.tr"

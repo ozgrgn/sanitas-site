@@ -96,7 +96,31 @@ const getGroupViaPerma = (perma) => {
 const getTreatmentViaPerma = (perma) => {
   return Http.get(`${ENV.API_URL}/treatment/perma/${perma}`);
 };
+const getContacts = (lang) => {
+  let data = {};
+  if (lang) {
+    data.lang = lang;
+  }
+  return Http.get(`${ENV.API_URL}/contact`, { ...data });
+};
 
+// Faqs
+const getFaqs = (lang, isActive, treatment,general) => {
+  let data = {};
+  if (lang) {
+    data.lang = lang;
+  }
+  if (isActive) {
+    data.isActive = isActive;
+  }
+  if (treatment) {
+    data.treatment = treatment;
+  }
+  if (general) {
+    data.general = general;
+  }
+  return Http.get(`${ENV.API_URL}/faq`, { ...data });
+};
 export default {
 
 //LANGS
@@ -121,5 +145,9 @@ getLangs,
   //about
   getAbouts,
   //translate
-  getTranslates
+  getTranslates,
+  //contacts
+  getContacts,
+  //faqs
+  getFaqs
 };

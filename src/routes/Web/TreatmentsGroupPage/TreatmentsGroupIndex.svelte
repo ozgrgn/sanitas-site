@@ -1,5 +1,5 @@
 <script>
-  import { lang, groups } from "$services/store";
+  import { lang } from "$services/store";
   import { useParams } from "svelte-navigator";
   import Title from "$components/Title.svelte";
   import TreatmentsGroupHero from "./TreatmentsGroupHero.svelte";
@@ -17,7 +17,7 @@
   const getGroup = async () => {
     let response = await RestService.getGroupViaPerma($params.group);
     group = response["group"];
-    if (!group.department) {
+    if (group && !group.department) {
       getTreatmentViaGroupId(group._id);
       console.log("sfaefafef");
     }

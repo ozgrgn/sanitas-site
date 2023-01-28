@@ -8,6 +8,7 @@
   import TreatmentsGroupIndex from "./Web/TreatmentsGroupPage/TreatmentsGroupIndex.svelte";
   import TreatmentDetailIndex from "./Web/TreatmentPage/TreatmentDetailIndex.svelte";
   import AboutIndex from "./Web/About/AboutIndex.svelte";
+  import ContactIndex from "./Web/Contact/ContactIndex.svelte";
 </script>
 
 <div class="flex flex-col justify-between">
@@ -20,6 +21,7 @@
   <Router>
     <Route path="home" component={Index} />
     <Route path="about" component={AboutIndex} />
+    <Route path="contact" component={ContactIndex} />
 
     <Route path="treatments/:treatment" component={TreatmentDetailIndex} />
     <Route path="departments/:group" component={TreatmentsGroupIndex} />

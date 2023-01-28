@@ -6,7 +6,6 @@
 
 
   const location = useLocation();
-  console.log($lang, "şşkşk");
 
 
 
@@ -19,8 +18,8 @@
   show={$paymentItemModal}
 /> -->
 <div class="container mx-auto h-20 border-b flex flex-col justify-center ">
-  <div class="flex justify-between">
-    <a use:link href="/" class="z-20">
+  <div class="flex justify-between items-center">
+    <a use:link href={`/${$lang}/home`} class="z-20">
       <img class="" src="/assets/img/logo/sanitas-logo.png" alt="" />
     </a>
     <div class="flex font-medium justify-evenly self-center w-full px-28 z-50">
@@ -39,7 +38,7 @@
           </div>
         </button>
         <ul
-          class="dropdown-content pt-4 bg-white rounded-xl absolute hidden text-primary w-52 z-50"
+          class="dropdown-content pt-4 bg-white rounded-xl absolute hidden text-primary w-56 z-50"
         >
         {#if $groups}
           {#each $groups as group}
@@ -51,9 +50,9 @@
               </li>
             {:else}
               <li class="dropdown">
-                <a use:link class="py-2 mx-4  border-b border-secondary/10 block whitespace-no-wrap" href= {`/${$lang}/departments/${group.perma}`}
+                <a use:link class="py-2 mx-4 border-b border-secondary/10 block whitespace-no-wrap" href= {`/${$lang}/departments/${group.perma}`}
                   >
-                  <div class="flex">
+                  <div class="flex items-center">
                     <span>{group.title} </span>
                     <div class="p-[0.3rem]">{@html Svg.angleRight}</div>
                   </div>
@@ -61,7 +60,7 @@
                   </a
                 >
                 <ul
-                  class="dropdown-content bg-white  rounded absolute hidden text-primary  ml-52 -mt-12"
+                  class="dropdown-content bg-white rounded absolute hidden text-primary  ml-56 -mt-12"
                 >
                 {#if $treatments}
                   {#each $treatments as treatment}
@@ -83,17 +82,22 @@
           {/if}
         </ul>
       </div>
-      <div class="">{$translate.contact}</div>
+      <a use:link href={`/${$lang}/contact`} class=""><span>{$translate.contact} </span></a>
+
 
       {/if}
+     
     </div>
+    {#if $translate}
     <div class="w-1/4 flex flex-col justify-center">
 
       <button on:click={()=>modal.set(!$modal)} class="btn py-4 px-2 rounded-sm bg-primary text-white font-semibold uppercase"
-        >Free Consultation</button
+        >{$translate.book_an_appointment}</button
       >
     </div>
+    {/if}
   </div>
+
 </div>
 <style>
   .dropdown:hover > .dropdown-content {

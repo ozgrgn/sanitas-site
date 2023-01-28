@@ -1,18 +1,27 @@
 <script>
+    import RestService from "$services/rest";
+    import { lang } from "$services/store";
+
     import FaqDetail from "$components/FaqDetail.svelte";
-    import Title from "$components/Title.svelte";
-    export let faqs;
-    export let title
+    let faqs;
+    export let treatment
+    const getFaqs = async () => {
+    let response = await RestService.getFaqs(
+      $lang,
+      true,
+      treatment,
+    );
+    faqs = response["faqs"];
+    console.log(faqs, "faqs");
+  };
+  getFaqs();
   </script>
-  
+  {#if faqs}
   <section class="bg-white bg-gray-50">
-    <div class="container py-10 mx-auto ">
-      <h3
-        class="text-3xl font-semibold text-center text-gray-800 lg:text-4xl text-white"
-      >
-      </h3>
+    <div class="container py-5 mx-auto ">
       <div class="mt-4">
         <FaqDetail {faqs} />
       </div>
     </div>
   </section>
+  {/if}
