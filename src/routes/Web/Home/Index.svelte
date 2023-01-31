@@ -9,6 +9,7 @@
 
 
   let sliders;
+  let faqs=[]
 
 const getSliders = async () => {
   let response = await RestService.getSliders($lang);
@@ -16,33 +17,13 @@ const getSliders = async () => {
   console.log(sliders);
 };
 getSliders();
-  let faqs = [
-    {
-      _id:1,
-      sort:1,
-      q: "Böyle Güzel bir Web sitesi nasıl olabilir?",
-      a: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas eaque nobis, fugit odit omnis fugiat deleniti animi ab maxime cum laboriosam recusandae facere dolorum veniam quia pariatur obcaecati illo ducimus?",
-    },
-    {
-      _id:2,
-      sort:2,
-      q: "Böyle Güzel bir Web sitesi nasıl olabilir?",
-      a: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas eaque nobis, fugit odit omnis fugiat deleniti animi ab maxime cum laboriosam recusandae facere dolorum veniam quia pariatur obcaecati illo ducimus?",
-    },
-    {
-      _id:3,
-      sort:3,
-      q: "Böyle Güzel bir Web sitesi nasıl olabilir?",
-      a: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas eaque nobis, fugit odit omnis fugiat deleniti animi ab maxime cum laboriosam recusandae facere dolorum veniam quia pariatur obcaecati illo ducimus?",
-    },
-    {
-      _id:4,
-      sort:4,
-      q: "Böyle Güzel bir Web sitesi nasıl olabilir?",
-      a: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas eaque nobis, fugit odit omnis fugiat deleniti animi ab maxime cum laboriosam recusandae facere dolorum veniam quia pariatur obcaecati illo ducimus?",
-    },
-
-  ];
+const getFaqs = async () => {
+    let response = await RestService.getFaqs($lang,true,undefined,true);
+    faqs = response["faqs"];
+    faqs[0].active=true
+    console.log(faqs, "faqs");
+  };
+  getFaqs();
 </script>
 {#if sliders}
 <div class="relative">

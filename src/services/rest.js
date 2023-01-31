@@ -121,6 +121,19 @@ const getFaqs = (lang, isActive, treatment,general) => {
   }
   return Http.get(`${ENV.API_URL}/faq`, { ...data });
 };
+// Reviews
+const getReviews = (lang, isActive) => {
+  let data = {};
+
+  if (lang) {
+    data.lang = lang;
+  }
+  if (isActive) {
+    data.isActive = isActive;
+  }
+  
+  return Http.get(`${ENV.API_URL}/review`, { ...data });
+};
 export default {
 
 //LANGS
@@ -149,5 +162,7 @@ getLangs,
   //contacts
   getContacts,
   //faqs
-  getFaqs
+  getFaqs,
+  //reviews
+  getReviews
 };
