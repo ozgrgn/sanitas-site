@@ -1,8 +1,7 @@
 <script>
   import { fly } from "svelte/transition";
-
   export let faqs;
-  faqs[0].active = true;
+
   const opened = (a) =>
     faqs.map((faq, index) => {
       if (faqs[index]._id == a) {

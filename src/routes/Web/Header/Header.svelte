@@ -26,7 +26,7 @@
       {#if $translate}
       <a use:link href={`/${$lang}/home`} class=""><span>{$translate.homePage} </span></a>
       <a use:link href={`/${$lang}/about`} class="">{$translate.about}</a>
-      <a use:link href={`/${$lang}/faq`} class="">FAQ</a>
+      <a use:link href={`/${$lang}/faqs`} class="">FAQ</a>
       
       <div class="dropdown inline-block relative z-20">
         <button

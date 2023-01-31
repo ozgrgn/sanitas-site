@@ -1,6 +1,8 @@
 <script>
   import FaqDetail from "$components/FaqDetail.svelte";
+  import QuillHtml from "$components/QuillHtml.svelte";
   import TreatmentSlider from "$components/Sliders/TreatmentSlider.svelte";
+  import { text } from "svelte/internal";
   import TreatmentFaq from "./TreatmentFaq.svelte";
   export let treatment
   let faqs = [
@@ -34,7 +36,7 @@
 <div class="">
   <TreatmentSlider sliders={treatment.images}/>
   <div class="mt-10">
-  {@html treatment.text}
+  <QuillHtml text={treatment.text}/>
   </div>
   <div class="sticky top-0 h-full">
     <TreatmentFaq {faqs} treatment={treatment._id} />
