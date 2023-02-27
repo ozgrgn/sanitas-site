@@ -20,6 +20,7 @@
     features,
   } from "$services/store";
   import FaqIndex from "./Web/FAQ/FaqIndex.svelte";
+  import DetoxDetailIndex from "./Web/Detox/DetoxDetailIndex.svelte";
   const getGroups = async () => {
     let response = await RestService.getGroups(undefined, undefined, $lang);
     groups.set(response["groups"]);
@@ -68,14 +69,13 @@
     <Header />
   </div>
 <div class="min-h-screen h-full">
-  {#if $groups && $treatments && features}
+  {#if $groups  && features}
   <Router>
     <Route path="home" component={Index} />
     <Route path="about" component={AboutIndex} />
     <Route path="contact" component={ContactIndex} />
     <Route path="faqs" component={FaqIndex} />
-
-
+    <Route path="detox" component={DetoxDetailIndex} />
     <Route path="treatments/:treatment" component={TreatmentDetailIndex} />
     <Route path="departments/:group" component={TreatmentsGroupIndex} />
 

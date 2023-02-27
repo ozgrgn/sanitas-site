@@ -40,7 +40,7 @@
 </script>
 
 {#if group && group.department}
-  <div class="relative bg-primary h-96 w-full z-1">
+  <div class="relative bg-primary h-96 w-full z-1 mb-10 ">
     <img
       class="absolute top-0 h-96 w-full opacity-10 right-0 object-cover z-1"
       src="/assets/img/treatments/back1.jpeg"
@@ -48,12 +48,12 @@
     />
   </div>
   <div class="absolute top-0 left-0 w-full">
-    <div class="container mx-auto z-20">
+    <div class="container mx-auto z-20 ">
       <TreatmentsGroupHero {group} />
     </div>
   </div>
 
-  <div class="container mx-auto mt-28 text-center">
+  <div class="container mx-auto mt-28 text-center mb-10">
     <Title customClass={"uppercase"} title2={group.title} title1="" />
     <div class="grid grid-cols-3 gap-8">
       {#if treatments}

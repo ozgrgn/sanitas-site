@@ -11,4 +11,7 @@
     list-style-position: inside;
     list-style-type: disc;
   }
+  :global(.quill-text h3) {
+font-weight: bold;
+  }
 </style>

@@ -5,7 +5,6 @@
   import AboutTreatmentGroup from "./FaqTreatmentGroup.svelte";
   import { lang,features,translate,general } from "$services/store";
   import RestService from "$services/rest";
-  import { Translate } from "$services/language";
   import FaqHero from "./FaqHero.svelte";
   import FaqDetail from "$components/FaqDetail.svelte";
 

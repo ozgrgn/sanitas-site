@@ -3,10 +3,10 @@ const post = async (url, body) => {
     let response = await fetch(url, {
       method: "POST",
       body: JSON.stringify(body),
-      headers: {
-        Authorization: `Bearer ${JSON.parse(localStorage.getItem("user"))?.token}`,
-        "Content-Type": "application/json",
-      },
+      // headers: {
+      //   Authorization: `Bearer ${JSON.parse(localStorage.getItem("user"))?.token}`,
+      //   "Content-Type": "application/json",
+      // },
     });
 
     return response.json();
@@ -20,9 +20,9 @@ const postFormData = async (url, body) => {
     let response = await fetch(url, {
       method: "POST",
       body,
-      headers: {
-        Authorization: `Bearer ${JSON.parse(localStorage.getItem("user"))?.token}`,
-      },
+      // headers: {
+      //   Authorization: `Bearer ${JSON.parse(localStorage.getItem("user"))?.token}`,
+      // },
     });
 
     return response.json();
@@ -36,10 +36,10 @@ const put = async (url, body) => {
     let response = await fetch(url, {
       method: "PUT",
       body: JSON.stringify(body),
-      headers: {
-        Authorization: `Bearer ${JSON.parse(localStorage.getItem("user"))?.token}`,
-        "Content-Type": "application/json",
-      },
+      // headers: {
+      //   Authorization: `Bearer ${JSON.parse(localStorage.getItem("user"))?.token}`,
+      //   "Content-Type": "application/json",
+      // },
     });
 
     return response.json();
@@ -53,10 +53,10 @@ const patch = async (url, body) => {
     let response = await fetch(url, {
       method: "PATCH",
       body: JSON.stringify(body),
-      headers: {
-        Authorization: `Bearer ${JSON.parse(localStorage.getItem("user"))?.token}`,
-        "Content-Type": "application/json",
-      },
+      // headers: {
+      //   Authorization: `Bearer ${JSON.parse(localStorage.getItem("user"))?.token}`,
+      //   "Content-Type": "application/json",
+      // },
     });
 
     return response.json();
@@ -72,9 +72,9 @@ const get = async (url, params) => {
   try {
     let response = await fetch(requestUrl, {
       method: "GET",
-      headers: {
-        Authorization: `Bearer ${JSON.parse(localStorage.getItem("user"))?.token}`,
-      },
+      // headers: {
+      //   Authorization: `Bearer ${JSON.parse(localStorage.getItem("user"))?.token}`,
+      // },
     });
     return response.json();
   } catch (error) {
@@ -90,9 +90,9 @@ const _delete = async (url, params) => {
   try {
     let response = await fetch(requestUrl, {
       method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${JSON.parse(localStorage.getItem("user"))?.token}`,
-      },
+      // headers: {
+      //   Authorization: `Bearer ${JSON.parse(localStorage.getItem("user"))?.token}`,
+      // },
     });
     return response.json();
   } catch (error) {
