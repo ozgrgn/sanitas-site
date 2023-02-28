@@ -37,7 +37,7 @@
 </script>
 
 <input
-  class="border-0 placeholder-blueGray-300 pl-2 text-blueGray-600 bg-white h-10 rounded text-sm shadow focus:outline-none focus:ring w-full {customClass} disabled:bg-slate-100"
+  class="border-0 px-2 h-9  placeholder:text-sm placeholder:font-semibold shadow placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-1 focus:outline-secondary w-full {customClass} disabled:bg-slate-100"
   type="text"
   bind:value
   {placeholder}

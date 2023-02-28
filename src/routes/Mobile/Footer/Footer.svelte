@@ -12,7 +12,8 @@
     langs,
   } from "$services/store";
   let newLang;
-  console.log($translate, "translate");
+
+  console.log($groups, "groups");
   const langTrigger = (_lang) => {
     lang.set(_lang);
     let splittedPathName = window.location.pathname.split("/");
@@ -27,7 +28,7 @@
 
 {#if $general && $translate}
   <footer class="relative bg-primary" aria-labelledby="footer-heading">
-    <div class="max-w-7xl mx-auto py-12 ">
+    <div class="max-w-7xl py-12 mx-2  md:mx-auto ">
       <div class="pb-8 md:grid xl:grid-cols-6 xl:gap-2">
         <div class="md:grid md:grid-cols-2 gap-16 xl:col-span-4">
           <div class="first">
@@ -57,7 +58,7 @@
               <div class="grid-rows-1">
                 <div class="grid grid-cols-2 ">
                   <div class="">
-                    <ul class="mt-4 space-y-1 px-2">
+                    <ul class="mt-4 space-y-4 px-2">
                       {#each Array(6) as treatment, i}
                         {#if $groups && $groups[i]}
                           <li>
@@ -73,7 +74,7 @@
                       {/each}
                     </ul>
                   </div>
-                  <ul class="mt-4 space-y-1 px-2">
+                  <ul class="mt-4 space-y-4 px-2">
                     {#each Array(6) as treatment, i}
                       {#if $groups && $groups[i + 6]}
                         <li>
@@ -140,9 +141,9 @@
       </div>
 
       <div
-        class="mt-8 border-t border-white/50 pt-8 md:flex md:items-center md:justify-between"
+        class="mt-8 w-full border-t border-white/50 pt-8 "
       >
-        <div class="flex space-x-6 md:order-2">
+        <div class="flex items-center justify-center space-x-6 md:order-2">
           <a href={"/" + $general?.facebook}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -173,7 +174,7 @@
               class=" "
               width="25"
               height="25"
-              viewBox="0 0 100 100"
+              viewBox="0 0 110 110"
             >
               {@html Svg.youtube}
             </svg>
@@ -181,7 +182,7 @@
           <a href={$general?.whatsapp}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class=""
+              class="mt-1"
               width="30"
               height="30"
               fill="#fff"
@@ -190,11 +191,11 @@
               {@html Svg.whatsapp2}
             </svg>
           </a>
-        </div>
-        <p class="mt-8 text-base text-white md:mt-0 md:order-1">
+        </div> </div>
+        <p class="mt-8 text-sm text-white md:mt-0 md:order-1">
           {$general?.copright}
         </p>
-      </div>
+     
     </div>
   </footer>
 {/if}

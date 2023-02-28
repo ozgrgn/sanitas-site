@@ -1,6 +1,4 @@
 <script>
-  import Input from "$components/Form/Input.svelte";
-  import PhoneInput from "$components/Form/PhoneInput.svelte";
   import { perma } from "$services/store";
   import { lang,translate } from "$services/store";
   let name;
@@ -61,8 +59,15 @@
        <p class="text-red-500">Please enter your name and phone</p> 
       </div>
       <ul class={formStatus == true ? "hidden" : "block"}>
-        <li class="h-12 mt-4">
-          <Input
+        <li class="h-12">
+          <input
+            style="
+                background: url('/assets/img/user.png') no-repeat
+                  scroll 7px 11px;
+                background-size: 20px 20px;
+                padding-left: 35px; 
+               
+              "
             type="text"
             name="name"
             placeholder={$translate.name}
@@ -72,7 +77,7 @@
         </li>
         <li>
           <div class="form-control w-full mt-2">
-            <PhoneInput
+            <input
               bind:value={phone}
     
               class={" h-12  border-0 placeholder-blueGray-300 text-blueGray-600 bg-white  text-sm  focus:outline-none "}

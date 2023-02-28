@@ -1,16 +1,13 @@
 <!-- App.svelte -->
 <script>
-  import Routes from "./routes/Routes.svelte";
+  import Routes from "./routes/Web/Routes.svelte";
   import { Router, Route, navigate } from "svelte-navigator";
   import { onDestroy, onMount } from "svelte";
+  import { isDesktop } from "$services/utils";
+  import DesktopRoutes from "./routes/Web/Routes.svelte";
+  import MobileRoutes from "./routes/Mobile/Routes.svelte";
   import {
     lang,
-    langs,
-    groups,
-    treatments,
-    general,
-    translate,
-    features,
   } from "$services/store";
   import moment from "moment/dist/moment.js";
   import "moment/dist/locale/tr.js";
@@ -33,7 +30,11 @@
   });
  
 </script>
-
 <Router primary={false}>
-  <Route path="/:lang/*" component={Routes} />
+{#if isDesktop()}
+<Route path="/:lang/*" component={DesktopRoutes} />
+{:else}
+<Route path="/:lang/*" component={MobileRoutes} />
+{/if}
 </Router>
+

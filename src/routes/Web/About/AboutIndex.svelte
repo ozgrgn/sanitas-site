@@ -6,6 +6,7 @@
   import { lang,features,translate,general } from "$services/store";
   import RestService from "$services/rest";
   import { Translate } from "$services/language";
+  import QuillHtml from "$components/QuillHtml.svelte";
 
 let about
 console.log($features,"featuressss")
@@ -64,7 +65,7 @@ console.log($features,"featuressss")
       {/if}
     </div>
       {#if about?.about_right}
-<div class=" pt-10">{@html about?.about_right}</div>
+<div class=" pt-10"><QuillHtml text= {about?.about_right}/> </div>
 {/if}
    
   </div>

@@ -1,13 +1,13 @@
 <script>
   import { Router, Route } from "svelte-navigator";
-  import Top from "./Web/Header/Top.svelte";
-  import Header from "./Web/Header/Header.svelte";
-  import Index from "./Web/Home/Index.svelte";
-  import Footer from "./Web/Footer/Footer.svelte";
-  import TreatmentsGroupIndex from "./Web/TreatmentsGroupPage/TreatmentsGroupIndex.svelte";
-  import TreatmentDetailIndex from "./Web/TreatmentPage/TreatmentDetailIndex.svelte";
-  import AboutIndex from "./Web/About/AboutIndex.svelte";
-  import ContactIndex from "./Web/Contact/ContactIndex.svelte";
+  import Top from "./Header/Top.svelte";
+  import Header from "./Header/Header.svelte";
+  import Index from "./Home/Index.svelte";
+  import Footer from "./Footer/Footer.svelte";
+  import TreatmentsGroupIndex from "./TreatmentsGroupPage/TreatmentsGroupIndex.svelte";
+  import TreatmentDetailIndex from "./TreatmentPage/TreatmentDetailIndex.svelte";
+  import AboutIndex from "./About/AboutIndex.svelte";
+  import ContactIndex from "./Contact/ContactIndex.svelte";
   import RestService from "$services/rest";
 
   import {
@@ -19,8 +19,8 @@
     translate,
     features,
   } from "$services/store";
-  import FaqIndex from "./Web/FAQ/FaqIndex.svelte";
-  import DetoxDetailIndex from "./Web/Detox/DetoxDetailIndex.svelte";
+  import FaqIndex from "./FAQ/FaqIndex.svelte";
+  import DetoxDetailIndex from "./Detox/DetoxDetailIndex.svelte";
   const getGroups = async () => {
     let response = await RestService.getGroups(undefined, undefined, $lang);
     groups.set(response["groups"]);
@@ -63,12 +63,12 @@
 
 </script>
 
-<div class="flex flex-col justify-between">
+<div class="flex flex-col justify-between w-screen overflow-hidden	">
   <div>
-    <Top />
+    <!-- <Top /> -->
     <Header />
   </div>
-<div class="min-h-screen h-full">
+<div class="min-h-screen w-screen h-full">
   {#if $groups  && features}
   <Router>
     <Route path="home" component={Index} />

@@ -84,12 +84,13 @@
             {/if}
           </ul>
         </div>
-        <a use:link href={`/${$lang}/contact`} class=""
-          ><span>{$translate.contact} </span></a
-        >
+     
         <a use:link href={`/${$lang}/detox`} class=""
         ><span>DETOX </span></a
       >
+      <a use:link href={`/${$lang}/contact`} class=""
+      ><span>{$translate.contact} </span></a
+    >
       {/if}
     </div>
     {#if $translate}
