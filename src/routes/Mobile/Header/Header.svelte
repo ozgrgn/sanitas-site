@@ -118,26 +118,26 @@
         <a
           use:link
           on:click={() => changeNavStatus()}
-          class="flex items-center px-2 my-1 mt-5  h-[2rem] bg-white"
+          class="flex items-center px-2  mt-5  h-[2rem] bg-white"
           href={`/${$lang}/about`}>{$translate.about}</a
         >
         <a
           use:link
           on:click={() => changeNavStatus()}
-          class="flex items-center px-2 my-1  h-[2rem] bg-white"
+          class="flex items-center px-2   h-[2rem] bg-white"
           href={`/${$lang}/contact`}>{$translate.contact}</a
         >
         <a
         use:link
         on:click={() => changeNavStatus()}
-        class="flex items-center px-2 my-1  h-[2rem] bg-white"
+        class="flex items-center px-2   h-[2rem] bg-white"
         href={`/${$lang}/faqs`}>{$translate.faq}</a
       >
         <a
           use:link
           on:click={() => changeNavStatus()}
           href={`/${$lang}/detox`}
-          class="flex items-center px-2 my-1 w-full h-[2rem] bg-white"
+          class="flex items-center px-2  w-full h-[2rem] bg-white"
           ><span>DETOX </span></a
         >
 
@@ -149,23 +149,21 @@
             </div>
           </button>
           <ul
-            class="dropdown-content pt-2 bg-white rounded-xl absolute  text-primary w-52 z-50"
+            class="dropdown-content pt-2 bg-white rounded-xl absolute text-primary w-52 z-50"
           >
             {#if $groups}
               {#each $groups as group}
                 {#if !group.department}
-                  <li class="" on:click={() => changeNavStatus()}>
-                    <a
-                      use:link
-                      class="py-1 mx-4 block whitespace-no-wrap"
-                      href={`/${$lang}/departments/${group.perma}`}
-                      >{group.title}</a
+                  <li class="w-full" on:click={() => changeNavStatus()}>
+                    <div
+                      class="py-1 mx-4 block whitespace-no-wrap select-none"
+                      >{group.title}</div
                     >
                   </li>
                 {:else}
                   <li class="dropdown">
                     <div use:link class="py-1 mx-4 block whitespace-no-wrap">
-                      <div class="flex items-center">
+                      <div class="flex items-center select-none">
                         <span>{group.title} </span>
                         <div class="p-[0.3rem]">{@html Svg.angleRight}</div>
                       </div>
@@ -180,7 +178,7 @@
                               <a
                               on:click={() => changeNavStatus()}
                                 use:link
-                                class="pr-2  py-1 block whitespace-no-wrap w-40"
+                                class="pr-2  py-1 block whitespace-no-wrap w-40 "
                                 href={`/${$lang}/treatments/${treatment.perma}`}
                               >
                                 {treatment.title}</a

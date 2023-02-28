@@ -3,15 +3,15 @@ import ENV from "../env";
 
 // SLIDER
 const getLangs = () => {
-  let data = { };
+  let data = {};
 
   return Http.get(`${ENV.API_URL}/lang`, { ...data });
 };
 
 // SLIDER
 const getSliders = (lang) => {
-  let data = { };
- if (lang) {
+  let data = {};
+  if (lang) {
     data.lang = lang;
   }
   return Http.get(`${ENV.API_URL}/slider`, { ...data });
@@ -44,7 +44,7 @@ const getGroups = (limit, skip, lang) => {
 
 
 //Treatment
-const getTreatments = (lang, group,isActive) => {
+const getTreatments = (lang, group, isActive) => {
   let data = {};
   if (lang) {
     data.lang = lang;
@@ -105,7 +105,7 @@ const getContacts = (lang) => {
 };
 
 // Faqs
-const getFaqs = (lang, isActive, treatment,general) => {
+const getFaqs = (lang, isActive, treatment, general) => {
   let data = {};
   if (lang) {
     data.lang = lang;
@@ -131,13 +131,19 @@ const getReviews = (lang, isActive) => {
   if (isActive) {
     data.isActive = isActive;
   }
-  
+
   return Http.get(`${ENV.API_URL}/review`, { ...data });
 };
-export default {
 
-//LANGS
-getLangs,
+const addRes = (data) => {
+
+  return Http.post(`${ENV.API_URL}/reservation`, { ...data });
+
+};
+export default {
+  addRes,
+  //LANGS
+  getLangs,
   //SLIDER
   getSliders,
 

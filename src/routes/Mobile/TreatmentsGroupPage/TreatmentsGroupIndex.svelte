@@ -5,10 +5,9 @@
   import TreatmentsGroupHero from "./TreatmentsGroupHero.svelte";
   import TreatmentCard from "$components/TreatmentCard.svelte";
   import RestService from "$services/rest";
-  import TreatmentDetailIndex from "../TreatmentPage/TreatmentDetailIndex.svelte";
   import TreatmentHero from "../TreatmentPage/TreatmentHero.svelte";
-  import TreatmentDetailForm from "../TreatmentPage/TreatmentDetailForm.svelte";
   import TreatmentDetail from "../TreatmentPage/TreatmentDetail.svelte";
+  import SmallForm from "$components/Form/SmallForm.svelte";
 
   const params = useParams();
   console.log($params);
@@ -78,7 +77,7 @@
   </div>
   <div class=" bg-gray-50 pt-20">
     <div class="container mx-auto grid grid-cols-4 gap-10">
-      <div class=" col-span-1"><TreatmentDetailForm /></div>
+      <div class=" col-span-1"><SmallForm /></div>
       <div class="col-span-3  ">
         <TreatmentDetail treatment={groupTreatment} />
       </div>

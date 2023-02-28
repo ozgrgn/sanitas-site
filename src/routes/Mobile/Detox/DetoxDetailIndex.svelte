@@ -1,8 +1,7 @@
 <script>
   import TreatmentDetail from "./TreatmentDetail.svelte";
-  import TreatmentDetailForm from "./TreatmentDetailForm.svelte";
-  import { useParams } from "svelte-navigator";
   import TreatmentHero from "./TreatmentHero.svelte";
+  import SmallForm from "$components/Form/SmallForm.svelte";
 
   let treatment = {
     _id: "63d776d019c985b20b95063f",
@@ -49,7 +48,7 @@
       <div class="  ">
         <TreatmentDetail {treatment} />
       </div>
-      <div class=" mb-8"><TreatmentDetailForm /></div>
+      <div class=" mb-8"><SmallForm /></div>
     </div>
   </div>
 {/if}

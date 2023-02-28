@@ -1,9 +1,9 @@
 <script>
   import TreatmentDetail from "./TreatmentDetail.svelte";
-  import TreatmentDetailForm from "./TreatmentDetailForm.svelte";
   import { useParams } from "svelte-navigator";
   import TreatmentHero from "./TreatmentHero.svelte";
   import RestService from "$services/rest";
+  import SmallForm from "$components/Form/SmallForm.svelte";
 
   const params = useParams();
 
@@ -35,7 +35,7 @@
       <div class="">
         <TreatmentDetail {treatment} />
       </div>
-      <div class="mb-8"><TreatmentDetailForm /></div>
+      <div class="mb-8"><SmallForm /></div>
 
     </div>
   </div>

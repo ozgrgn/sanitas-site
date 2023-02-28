@@ -3,10 +3,10 @@ const post = async (url, body) => {
     let response = await fetch(url, {
       method: "POST",
       body: JSON.stringify(body),
-      // headers: {
-      //   Authorization: `Bearer ${JSON.parse(localStorage.getItem("user"))?.token}`,
-      //   "Content-Type": "application/json",
-      // },
+      headers: {
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("user"))?.token}`,
+        "Content-Type": "application/json",
+      },
     });
 
     return response.json();
