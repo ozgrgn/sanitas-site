@@ -62,7 +62,7 @@
           </svg>
         </a>
        
-        <a href="{general.facebook}" class="cursor-pointer  self-center">
+        <a href="{$general?.facebook}" class="cursor-pointer  self-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class=" "

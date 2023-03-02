@@ -4,15 +4,9 @@
   import { lang, general, translate } from "$services/store";
   import Input from "$components/Form/Input.svelte";
   import Textarea from "$components/Form/Textarea.svelte";
+  import ContactForm from "$components/Form/ContactForm.svelte";
 
   let contact;
-  let name = undefined;
-  let email;
-  let note;
-  let subject;
-  let phone;
-  const addMessage = async () => {};
-  addMessage();
 
   const getContact = async () => {
     let response = await RestService.getContacts($lang);
@@ -119,105 +113,7 @@
       {/if}
 
       <div class="lg:w-3/5 h-auto">
-        <div class="p-4">
-          <h2 class="text-3xl">{contact.header}</h2>
-          <h3 class="text-lg pt-2">{contact.text}</h3>
-          <div class="flex flex-wrap my-4">
-            <div class="w-full lg:w-6/12 px-4">
-              <div class="relative w-full mb-3">
-                <label
-                  class="block text-blueGray-600 text-xs font-bold mb-2"
-                  for="grid-name"
-                >
-                  {$translate.name}
-                </label>
-                <Input
-                  bind:value={name}
-                  bind:isValid={name}
-                  placeholder={$translate.name}
-                  required={true}
-                />
-              </div>
-            </div>
-            <div class="w-full lg:w-6/12 px-4">
-              <div class="relative w-full mb-3">
-                <label
-                  class="block text-blueGray-600 text-xs font-bold mb-2"
-                  for="grid-name"
-                >
-                  {$translate.mail}
-                </label>
-                <Input
-                  bind:value={email}
-                  bind:isValid={email}
-                  placeholder={$translate.mail}
-                  required={true}
-                  type="email"
-                />
-              </div>
-            </div>
-            <div class="w-full lg:w-6/12 px-4">
-              <div class="relative w-full mb-3">
-                <label
-                  class="block text-blueGray-600 text-xs font-bold mb-2"
-                  for="grid-name"
-                >
-                  {$translate.subject}
-                </label>
-                <Input
-                  bind:value={subject}
-                  bind:isValid={subject}
-                  placeholder={$translate.subject}
-                  required={true}
-                />
-              </div>
-            </div>
-            <div class="w-full lg:w-6/12 px-4">
-              <div class="relative w-full mb-3">
-                <label
-                  class="block text-blueGray-600 text-xs font-bold mb-2"
-                  for="grid-name"
-                >
-                  {$translate.phone}
-                </label>
-                <Input
-                  bind:value={phone}
-                  bind:isValid={phone}
-                  placeholder={$translate.phone}
-                  required={true}
-                />
-              </div>
-            </div>
-            <div class="w-full lg:w-12/12 px-4">
-              <div class="relative w-full mb-3">
-                <label
-                  class="block text-blueGray-600 text-xs font-bold mb-2"
-                  for="grid-name"
-                >
-                  {$translate.note}
-                </label>
-                <Textarea
-                  bind:value={note}
-                  bind:isValid={note}
-                  placeholder={$translate.note}
-                  required={true}
-                />
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-wrap">
-            <div class="w-full lg:w-12/12 px-4 text-left mt-1 ">
-              <button
-                on:click={addMessage}
-                disabled={!name || !email || !note || !subject}
-                class="bg-primary disabled:bg-primary/70 text-white active:bg-bred-400 font-bold  text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 "
-                type="button"
-              >
-                {$translate.send}
-              </button>
-            </div>
-          </div>
-        </div>
+       <ContactForm {contact}/>
       </div>
     </div>
     <div class=""></div>

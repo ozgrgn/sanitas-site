@@ -64,7 +64,7 @@
       </div>
 
       <div class="flex justify-between">
-        <a href="{general.facebook}" class="cursor-pointer pr-2 self-center">
+        <a href="{ $general?.facebook}" class="cursor-pointer pr-2 self-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class=" "

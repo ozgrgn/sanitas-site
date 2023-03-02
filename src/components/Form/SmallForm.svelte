@@ -14,6 +14,7 @@
   let message;
   let sent;
   let lp = $lang + "/" + $perma;
+  console.log($translate, "translate");
   const addRes = async () => {
     if (!name || !phone) {
       warn = true;
@@ -23,7 +24,7 @@
     formStatus = true;
 
     let treatment;
-
+    phone = dialCode + phone;
     let date = new Date().toLocaleString("tr-TR");
     let bodyData = {
       lang: $lang,
@@ -56,7 +57,7 @@
             ? 'flex'
             : 'hidden'}"
         >
-          {$translate.sent}
+          {$translate.form_sent}
         </div>
         <div
           class="alert-warn mt-3 contact__msg {warn == true ? '' : 'hidden'}"
@@ -83,6 +84,7 @@
                 required={true}
                 name="phone"
                 autocomplete="phone"
+                bind:dialCode
               />
             </div>
           </li>

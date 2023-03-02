@@ -2,6 +2,7 @@
   import Svg from "../../../assets/svg.json";
   import { useLocation, link } from "svelte-navigator";
   import { lang, groups, treatments, translate, modal } from "$services/store";
+  import PopupButton from "$components/Buttons/PopupButton.svelte";
 
   const location = useLocation();
 </script>
@@ -95,12 +96,11 @@
     </div>
     {#if $translate}
       <div class="w-1/4 flex flex-col justify-center">
-        <button
-          on:click={() => modal.set(!$modal)}
-          class="btn py-4 px-2 rounded-sm bg-primary text-white font-semibold uppercase"
-          >{$translate.book_an_appointment}</button
-        >
+        <PopupButton buttonText={$translate.book_an_appointment}
+        customCss="btn py-4 px-2 rounded-sm bg-primary text-white font-semibold uppercase"  
+        />
       </div>
+  
     {/if}
   </div>
 </div>

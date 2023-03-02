@@ -27,7 +27,7 @@
 </script>
 
 <textarea
-  class=" {customClass} border-0 px-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full  min-h-[10rem]"
+  class=" {customClass} border-0 px-2 pt-2 placeholder-blueGray-300 placeholder:text-sm placeholder:font-semibold text-blueGray-600 bg-white rounded text-sm shadow focus:outline-1 focus:outline-secondary w-full min-h-[10rem]"
   bind:value
   {placeholder}
   class:field-danger={!$validity.valid}

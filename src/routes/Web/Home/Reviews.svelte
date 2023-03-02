@@ -278,11 +278,7 @@ class="text-3xl font-semibold text-center text-gray-800 lg:text-4xl text-white"
                             ? 'w-4/5'
                             : 'w-full'}"
                         />
-                        <img
-                          style="width:85px"
-                          src="/assets/img/reviews/stars.svg"
-                          alt=""
-                        />
+                     
                       </div>
                       <div class="review-date hidden xl:block">
                         {review.reviewDate}

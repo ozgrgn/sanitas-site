@@ -9,6 +9,8 @@
   import AboutIndex from "./About/AboutIndex.svelte";
   import ContactIndex from "./Contact/ContactIndex.svelte";
   import RestService from "$services/rest";
+	import Modal from 'svelte-simple-modal';
+	import { modal } from '$services/store';
 
   import {
     lang,
@@ -62,6 +64,7 @@
   getLangs();
 
 </script>
+<Modal show={$modal} />
 
 <div class="flex flex-col justify-between">
   <div>

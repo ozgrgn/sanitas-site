@@ -4,6 +4,7 @@
   import { translate, general } from "$services/store";
   export let sliders;
   import Svg from "../../assets/svg.json";
+  import PopupButton from "$components/Buttons/PopupButton.svelte";
 </script>
 
 <Splide
@@ -41,10 +42,10 @@
           
             <div class="mt-10 flex justify-end gap-2 mx-2">
               {#if translate}
-                <button
-                  class=" w-1/2 py-2 bg-white/20 rounded-sm border-2 border-primary text-sm font-bold  bg-transparent hover:border-primary hover:bg-primary hover:text-white text-primary"
-                  >{$translate.book_an_appointment}</button
-                >
+              <PopupButton
+                buttonText={$translate.book_an_appointment}
+                  customCss="min-h-16 w-52 py-2 px-2 rounded-sm border-2 border-primary text-sm font-semibold px-6 bg-transparent hover:border-primary hover:bg-primary hover:text-white text-primary"
+                />
               {/if}
               {#if general}
                 <a
@@ -52,7 +53,7 @@
                   href="https://api.whatsapp.com/send?phone={$general.whatsapp}"
                 >
                   <button
-                    class="flex w-full py-3 rounded-sm items-center justify-center text-sm font-semibold  border-primary text-md bg-primary text-white hover:bg-whatsapp hover:border-whatsapp "
+                    class="flex w-full py-3 rounded-sm items-center justify-center text-sm font-semibold  text-md bg-primary text-white hover:bg-whatsapp hover:border-whatsapp "
                     ><svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="pt-1"

@@ -144,7 +144,7 @@
         class="mt-8 w-full border-t border-white/50 pt-8 "
       >
         <div class="flex items-center justify-center space-x-6 md:order-2">
-          <a href={"/" + $general?.facebook}>
+          <a href={$general?.facebook}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class=" "
@@ -156,7 +156,7 @@
               {@html Svg.facebook2}
             </svg>
           </a>
-          <a href={"/" + $general?.instagram}>
+          <a href={$general?.instagram}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class=" "
@@ -168,7 +168,7 @@
               {@html Svg.instagram2}
             </svg>
           </a>
-          <a href={"/" + $general?.youtube}>
+          <a href={$general?.youtube}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class=" "
@@ -179,7 +179,7 @@
               {@html Svg.youtube}
             </svg>
           </a>
-          <a href={$general?.whatsapp}>
+          <a href="https://api.whatsapp.com/send?phone={$general.whatsapp}">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="mt-1"
