@@ -23,4 +23,8 @@
     font-weight: bold;
     font-size: 1.2rem;
   }
+  :global(.quill-text h4) {
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
 </style>
