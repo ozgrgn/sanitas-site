@@ -157,7 +157,7 @@
                 {#if !group.department}
                   <li class="w-full" on:click={() => changeNavStatus()}>
                     <div
-                      class="py-1 mx-4 block whitespace-no-wrap select-none"
+                      class="py-[0.2rem] mx-4 block whitespace-no-wrap select-none"
                       >{group.title}</div
                     >
                   </li>
@@ -166,11 +166,11 @@
                     <div use:link class="py-1 mx-4 block whitespace-no-wrap">
                       <div class="flex items-center select-none">
                         <span>{group.title} </span>
-                        <div class="p-[0.3rem]">{@html Svg.angleRight}</div>
+                        <div class="p-1">{@html Svg.angleRight}</div>
                       </div>
                     </div>
                     <ul
-                      class="dropdown-content bg-white rounded absolute hidden text-primary ml-52 -mt-10 pt-[0.1rem]"
+                      class="dropdown-content bg-white rounded absolute hidden text-primary ml-52 -mt-10 pt-[0.5rem]"
                     >
                       {#if $treatments}
                         {#each $treatments as treatment}
@@ -179,7 +179,7 @@
                               <a
                               on:click={() => changeNavStatus()}
                                 use:link
-                                class="pr-2  py-1 block whitespace-no-wrap w-40 "
+                                class="pt-[0.2rem] block whitespace-no-wrap w-40 "
                                 href={`/${$lang}/treatments/${treatment.perma}`}
                               >
                                 {treatment.title}</a
