@@ -13,6 +13,8 @@
   import LangSelect from "$components/Form/LangSelect.svelte";
   import Top from "./Top.svelte";
   let y;
+  let disabledScroll = true;
+
   const location = useLocation();
   const langTrigger = (_lang) => {
     document.documentElement.setAttribute("lang", _lang);
@@ -29,9 +31,8 @@
   };
 </script>
 
-<svelte:window bind:scrollY={y} />
 
-<div class="z-90	">
+<div class="z-[1000] 	">
   <div class="relative grid grid-cols-12 ">
     <div
       class="{active
@@ -39,7 +40,7 @@
         : 'opacity-0 invisible'} transition ease-in-out delay-150  "
     >
       <div
-        class="absolute top-[4rem] w-screen h-screen bg-black  "
+        class="absolute top-[4rem] w-screen h-screen bg-black  z-[1000] "
         on:click={() => changeNavStatus()}
       />
     </div>
@@ -68,7 +69,7 @@
         on:click={() => navigate("/")}
         on:keydown={() => navigate("/")}
         src={$general?.logo1}
-        class="h-12  object-cover"
+        class="h-12 object-cover"
         alt=""
       />
     </div>
@@ -80,7 +81,7 @@
   class:active
 >
   <aside
-    class="bg-white w-screen h-full text-md sm:text-lg fixed transition-all duration-1000 z-[1000] top-0 bottom-0 "
+    class="bg-white w-screen h-full h-screen text-md sm:text-lg fixed transition-all duration-1000 z-[1000] top-0 bottom-0"
   >
     <div class="menu flex flex-col pt-1 pb-10 pl-4">
       <div class="flex justify-around">
