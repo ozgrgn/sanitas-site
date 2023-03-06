@@ -79,7 +79,7 @@
                         <li>
                           <a
                             use:link
-                            href="/{$lang}/departments/{$groups[i + 4].perma}"
+                            href="/{$lang}/departments/{$groups[i + 6].perma}"
                             class="text-base text-gray-200 hover:text-white"
                           >
                             {$groups[i + 6].title}
