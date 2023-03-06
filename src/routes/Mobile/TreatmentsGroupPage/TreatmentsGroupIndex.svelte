@@ -1,5 +1,5 @@
 <script>
-  import { lang } from "$services/store";
+  import { lang,groups } from "$services/store";
   import { useParams } from "svelte-navigator";
   import Title from "$components/Title.svelte";
   import TreatmentsGroupHero from "./TreatmentsGroupHero.svelte";
@@ -10,7 +10,6 @@
   import SmallForm from "$components/Form/SmallForm.svelte";
 
   const params = useParams();
-  console.log($params);
   let groupTreatment;
   let group;
   const getGroup = async () => {
@@ -18,17 +17,13 @@
     group = response["group"];
     if (group && !group.department) {
       getTreatmentViaGroupId(group._id);
-      console.log("sfaefafef");
     }
-    console.log(group, "grupppp");
     getTreatments();
   };
   $: getGroup($params);
   const getTreatmentViaGroupId = async (groupId) => {
-    console.log(groupId, "dddd");
     let response = await RestService.getTreatmentViaGroupId(groupId);
     groupTreatment = response["treatment"];
-    console.log(groupTreatment,"fkfkfk")
   };
 
   let treatments;
@@ -38,8 +33,14 @@
   };
 </script>
 
+<svelte:head>
+  {#if group}
+    <title>Sanitas Health Travel | {group.title}</title>
+    <meta property="description" content={group.description} />
+  {/if}
+</svelte:head>
 {#if group && group.department}
-  <div class="relative bg-primary h-96 w-full z-1 mb-10 ">
+  <div class="relative bg-primary h-96 w-full z-1  ">
     <img
       class="absolute top-0 h-96 w-full opacity-10 right-0 object-cover z-1"
       src="/assets/img/treatments/back1.jpeg"
@@ -52,9 +53,9 @@
     </div>
   </div>
 
-  <div class="container mx-auto mt-28 text-center mb-10">
+  <div class="container mx-auto mt-20 text-center mb-2">
     <Title customClass={"uppercase"} title2={group.title} title1="" />
-    <div class="grid grid-cols-3 gap-8">
+    <div class="flex flex-col mx-4 gap-8">
       {#if treatments}
         {#each treatments as value}
           <TreatmentCard {value} />
@@ -76,11 +77,11 @@
     </div>
   </div>
   <div class=" bg-gray-50 pt-20">
-    <div class="container mx-auto grid grid-cols-4 gap-10">
-      <div class=" col-span-1"><SmallForm /></div>
-      <div class="col-span-3  ">
+    <div class="container mx-auto px-4">
+      <div class="">
         <TreatmentDetail treatment={groupTreatment} />
       </div>
+      <div class="mb-8"><SmallForm /></div>
     </div>
   </div>
 {/if}

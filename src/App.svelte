@@ -17,7 +17,6 @@
     if (window.location.pathname == "/" || !window.location.pathname) {
       navigate(`/${$lang}/home`);
     }
-    console.log($lang, "langeefw");
     let splittedPathName = window.location.pathname.split("/");
     if (splittedPathName && splittedPathName[1].length > 2) {
       splittedPathName.splice(1, 0, $lang);

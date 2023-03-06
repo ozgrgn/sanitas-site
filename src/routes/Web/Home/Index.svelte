@@ -4,38 +4,41 @@
   import Faq from "./Faq.svelte";
   import Reviews from "./Reviews.svelte";
   import HomeTreatmentsGroup from "./HomeTreatmentsGroup.svelte";
-  import { lang } from "$services/store";
+  import { lang, general } from "$services/store";
   import RestService from "$services/rest";
 
-
+  console.log($general, "gsggssgaaaaaaaaaaaaaa");
   let sliders;
-  let faqs=[]
+  let faqs = [];
 
-const getSliders = async () => {
-  let response = await RestService.getSliders($lang);
-  sliders = response["sliders"];
-  console.log(sliders);
-};
-getSliders();
-const getFaqs = async () => {
-    let response = await RestService.getFaqs($lang,true,undefined,true);
+  const getSliders = async () => {
+    let response = await RestService.getSliders($lang);
+    sliders = response["sliders"];
+  };
+  getSliders();
+  const getFaqs = async () => {
+    let response = await RestService.getFaqs($lang, true, undefined, true);
     faqs = response["faqs"];
-    faqs[0].active=true
-    console.log(faqs, "faqs");
+    faqs[0].active = true;
   };
   getFaqs();
 </script>
-{#if sliders}
-<div class="relative">
-  <MainSliderDesk {sliders} />
 
-  <div class="absolute w-full -mt-14">
-    <Box />
+<svelte:head>
+  <title>Sanitas Health Travel</title>
+  <meta property="description" content={$general.shortDesc} />
+</svelte:head>
+{#if sliders}
+  <div class="relative">
+    <MainSliderDesk {sliders} />
+
+    <div class="absolute w-full -mt-14">
+      <Box />
+    </div>
   </div>
-</div>
-<HomeTreatmentsGroup/>
-<div class=" mt-20">
-<Faq faqs={faqs} />
-</div>
-<Reviews></Reviews>
+  <HomeTreatmentsGroup />
+  <div class=" mt-20">
+    <Faq {faqs} />
+  </div>
+  <Reviews />
 {/if}

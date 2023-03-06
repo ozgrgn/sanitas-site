@@ -16,6 +16,11 @@
   let disabledScroll = true;
 
   const location = useLocation();
+  $: {
+    if ($location) {
+      window.scrollTo(0, 0);
+    }
+  }
   const langTrigger = (_lang) => {
     document.documentElement.setAttribute("lang", _lang);
     setTimeout(() => {
@@ -30,7 +35,6 @@
     }, 50);
   };
 </script>
-
 
 <div class="z-[1000] 	">
   <div class="relative grid grid-cols-12 ">
@@ -64,10 +68,10 @@
       </button>
     </div>
     <div class="" />
-    <div class=" items-center justify-center h-full py-1 col-span-9">
+    <div class="z-[900] items-center justify-center h-full py-1 col-span-9">
       <img
-        on:click={() => navigate("/")}
-        on:keydown={() => navigate("/")}
+        on:click={() => navigate(`/${$lang}/home`)}
+        on:keydown={() => navigate(`/${$lang}/home`)}
         src={$general?.logo1}
         class="h-12 object-cover"
         alt=""
@@ -87,8 +91,8 @@
       <div class="flex justify-around">
         <div class="flex items-center justify-center h-full ">
           <img
-            on:click={() => navigate("/")}
-            on:keydown={() => navigate("/")}
+            on:click={() => navigate(`/${$lang}/home`)}
+            on:keydown={() => navigate(`/${$lang}/home`)}
             src={$general?.logo1}
             class="h-14"
             alt=""
@@ -129,11 +133,11 @@
           href={`/${$lang}/contact`}>{$translate.contact}</a
         >
         <a
-        use:link
-        on:click={() => changeNavStatus()}
-        class="flex items-center px-2   h-[2rem] bg-white"
-        href={`/${$lang}/faqs`}>{$translate.faq}</a
-      >
+          use:link
+          on:click={() => changeNavStatus()}
+          class="flex items-center px-2   h-[2rem] bg-white"
+          href={`/${$lang}/faqs`}>{$translate.faq}</a
+        >
         <a
           use:link
           on:click={() => changeNavStatus()}
@@ -155,15 +159,19 @@
             {#if $groups}
               {#each $groups as group}
                 {#if !group.department}
-                  <li class="w-full" on:click={() => changeNavStatus()}>
-                    <div
+                  <li class="w-full">
+                    <a
+                      use:link
+                      href={`/${$lang}/departments/${group.perma}`}
+                      on:click={() => changeNavStatus()}
                       class="py-[0.2rem] mx-4 block whitespace-no-wrap select-none"
-                      >{group.title}</div
                     >
+                      {group.title}
+                    </a>
                   </li>
                 {:else}
                   <li class="dropdown">
-                    <div use:link class="py-1 mx-4 block whitespace-no-wrap">
+                    <div class="py-1 mx-4 block whitespace-no-wrap">
                       <div class="flex items-center select-none">
                         <span>{group.title} </span>
                         <div class="p-1">{@html Svg.angleRight}</div>
@@ -177,7 +185,7 @@
                           {#if treatment.group == group._id}
                             <li>
                               <a
-                              on:click={() => changeNavStatus()}
+                                on:click={() => changeNavStatus()}
                                 use:link
                                 class="pt-[0.2rem] block whitespace-no-wrap w-40 "
                                 href={`/${$lang}/treatments/${treatment.perma}`}

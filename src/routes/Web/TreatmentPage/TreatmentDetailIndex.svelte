@@ -4,6 +4,7 @@
   import TreatmentHero from "./TreatmentHero.svelte";
   import RestService from "$services/rest";
   import SmallForm from "$components/Form/SmallForm.svelte";
+  import { translate, general } from "$services/store";
 
   const params = useParams();
 
@@ -11,12 +12,16 @@
   const getTreatment = async () => {
     let response = await RestService.getTreatmentViaPerma($params.treatment);
     treatment = response["treatment"];
-    console.log(response, "grupppp");
+    console.log(treatment,"treatment")
   };
   $: getTreatment($params);
-  console.log(treatment, "artık bu treatment");
 </script>
-
+<svelte:head>
+  {#if treatment}
+  <title>Sanitas Health Travel | {treatment.title}</title>
+  <meta property="description" content={treatment.shortDesc} />
+  {/if}
+</svelte:head>
 {#if treatment}
   <div class="relative bg-primary h-96 w-full z-1">
     <img

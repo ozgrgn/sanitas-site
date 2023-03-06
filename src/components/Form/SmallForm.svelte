@@ -14,7 +14,6 @@
   let message;
   let sent;
   let lp = $lang + "/" + $perma;
-  console.log($translate, "translate");
   const addRes = async () => {
     if (!name || !phone) {
       warn = true;
@@ -39,7 +38,6 @@
     if (addResResponse && addResResponse["status"]) {
       sent = true;
     }
-    console.log(addResResponse, "addResResponse");
   };
 </script>
 

@@ -1,10 +1,9 @@
 <script>
   import Svg from "../assets/svg.json";
   import { fade } from "svelte/transition";
-  import { lang,translate } from "$services/store";
+  import { lang } from "$services/store";
 
   export let value;
-  console.log(value, "aa");
 </script>
 
 <div class="relative flex flex-col relative rounded-md border-b">

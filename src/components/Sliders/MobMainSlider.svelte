@@ -44,7 +44,7 @@
               {#if translate}
               <PopupButton
                 buttonText={$translate.book_an_appointment}
-                  customCss="min-h-16 w-52 py-2 px-2 rounded-sm border-2 border-primary text-sm font-semibold px-6 bg-transparent hover:border-primary hover:bg-primary hover:text-white text-primary"
+                  customCss="min-h-16 w-52 py-2 px-2 rounded-sm border-2 border-primary text-md font-semibold px-6 bg-white/50 hover:border-primary hover:bg-primary hover:text-white text-primary"
                 />
               {/if}
               {#if general}

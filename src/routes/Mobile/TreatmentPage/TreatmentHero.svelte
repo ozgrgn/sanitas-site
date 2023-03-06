@@ -13,7 +13,7 @@ export let treatment
   {treatment.title}
 </div>
 <div
-  class="text-3xl text-white/90 tracking-tight w-fit pt-8 border-b-4 border-white/80 h-20 mx-4"
+  class="text-2xl text-white/90 tracking-tight w-fit pt-8 border-b-4 border-white/80 h-20 mx-4"
 >
   <span class="">{treatment?.title}</span>
 </div>

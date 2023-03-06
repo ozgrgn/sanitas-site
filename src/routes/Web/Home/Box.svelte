@@ -7,7 +7,6 @@
   const getFeatures = async () => {
     let response = await RestService.getFeatures(undefined, undefined, $lang);
     features = response["features"];
-    console.log(features, "features");
   };
   getFeatures();
 </script>

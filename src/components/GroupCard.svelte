@@ -4,7 +4,6 @@
   import { lang } from "$services/store";
 
   export let value;
-  console.log(value, "aa");
 </script>
 {#if value}
 <a use:link href="/{$lang}/departments/{value.perma} "class="flex flex-col relative rounded-md shadow-lg">

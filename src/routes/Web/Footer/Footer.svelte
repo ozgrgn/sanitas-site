@@ -12,11 +12,9 @@
     langs,
   } from "$services/store";
   let newLang;
-  console.log($translate, "translate");
   const langTrigger = (_lang) => {
     lang.set(_lang);
     let splittedPathName = window.location.pathname.split("/");
-    console.log(splittedPathName, "splittedPathName");
     navigate(
       `/${_lang}/${splittedPathName[2] ? splittedPathName[2] : ""}${
         splittedPathName[3] ? "/" + splittedPathName[3] : ""

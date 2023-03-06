@@ -5,7 +5,6 @@
 
   import "@splidejs/svelte-splide/css";
  export let sliders;
- console.log(sliders,"teatment imagess")
 
 </script>
 

@@ -30,7 +30,10 @@
     image: "https://storage.googleapis.com/gumus-bucket/lasik.webp",
   };
 </script>
-
+<svelte:head>
+  <title>Sanitas Health Travel | Detox</title>
+  <meta property="description" content={treatment.shortDesc} />
+</svelte:head>
 {#if treatment}
   <div class="relative bg-primary h-96 w-full z-1">
     <img

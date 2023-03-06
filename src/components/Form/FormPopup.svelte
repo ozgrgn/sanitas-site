@@ -15,7 +15,6 @@
   let subject;
   let phone;
   let treatment
-  console.log($treatments)
   const addRes = async () => {
     if (!name || !phone) {
       warn = true;
@@ -39,7 +38,6 @@
     let addResResponse = await RestService.addRes(bodyData);
     if (addResResponse && addResResponse["status"]) {
     }
-    console.log(addResResponse, "addResResponse");
   };
 </script>
 

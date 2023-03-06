@@ -13,11 +13,9 @@
   } from "$services/store";
   let newLang;
 
-  console.log($groups, "groups");
   const langTrigger = (_lang) => {
     lang.set(_lang);
     let splittedPathName = window.location.pathname.split("/");
-    console.log(splittedPathName, "splittedPathName");
     navigate(
       `/${_lang}/${splittedPathName[2] ? splittedPathName[2] : ""}${
         splittedPathName[3] ? "/" + splittedPathName[3] : ""
@@ -48,7 +46,7 @@
               </div>
             </div>
           </div>
-          <div class="mt-10 md:mt-0 md:grid md:grid-cols-1 md:gap-8">
+          <!-- <div class="mt-10 md:mt-0 md:grid md:grid-cols-1 md:gap-8">
             <div>
               <h3
                 class="text-sm font-semibold text-white tracking-wider uppercase "
@@ -80,7 +78,7 @@
                         <li>
                           <a
                             use:link
-                            href="/{$lang}/departments/{$groups[i + 4].perma}"
+                            href="/{$lang}/departments/{$groups[i + 6].perma}"
                             class="text-base text-gray-200 hover:text-white"
                           >
                             {$groups[i + 6].title}
@@ -92,7 +90,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="third">
           <div class=" mt-10 lg:mt-0 md:grid md:grid-cols-1 ">

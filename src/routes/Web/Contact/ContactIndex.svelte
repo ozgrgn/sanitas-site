@@ -11,11 +11,13 @@
   const getContact = async () => {
     let response = await RestService.getContacts($lang);
     contact = response["contacts"][0];
-    console.log(contact, "contacts");
   };
   getContact();
 </script>
-
+<svelte:head>
+  <title>Sanitas Health Travel | {$translate.contact}</title>
+  <meta property="description" content={$general.shortDesc} />
+</svelte:head>
 <div class="relative bg-primary h-96 w-full z-1">
   <img
     class="absolute top-0 h-96 w-full opacity-10 right-0 object-cover z-1"

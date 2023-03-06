@@ -38,7 +38,6 @@
     let addResResponse = await RestService.addRes(bodyData);
     if (addResResponse && addResResponse["status"]) {
     }
-    console.log(addResResponse, "addResResponse");
   };
 </script>
 

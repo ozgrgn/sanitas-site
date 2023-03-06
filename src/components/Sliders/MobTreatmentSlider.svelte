@@ -7,7 +7,6 @@
   import "@splidejs/svelte-splide/css";
   import GroupCard from "$components/GroupCard.svelte";
  export let sliders;
- console.log(sliders,"teatment imagess")
 
 </script>
 

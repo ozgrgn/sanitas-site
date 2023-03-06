@@ -10,7 +10,6 @@
   const getReviews = async () => {
     let response = await RestService.getReviews($lang,true);
     filteredReviews = response["reviews"];
-    console.log(filteredReviews, "reviews");
   };
   getReviews();
 
@@ -35,7 +34,7 @@ class="text-3xl font-semibold text-center text-gray-800 lg:text-4xl text-white"
           aria-label="My Favorite Images"
           options={{
             arrows: false,
-            type: "loop",
+            type: "slide",
             pagination: true,
             perPage: 3,
             breakpoints: {

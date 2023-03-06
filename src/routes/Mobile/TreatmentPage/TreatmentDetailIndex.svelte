@@ -4,19 +4,30 @@
   import TreatmentHero from "./TreatmentHero.svelte";
   import RestService from "$services/rest";
   import SmallForm from "$components/Form/SmallForm.svelte";
-
+  import { lang, general, treatments } from "$services/store";
+  if($treatments)
+  console.log($treatments, "treatmenteesss");
   const params = useParams();
+  console.log($params.treatment, "params");
+  // const getTreatment = async () => {
+  //   treatment=undefined
+  //   let response = await RestService.getTreatmentViaPerma($params.treatment);
+  //   treatment = response["treatment"];
 
+  // };
   let treatment;
-  const getTreatment = async () => {
-    let response = await RestService.getTreatmentViaPerma($params.treatment);
-    treatment = response["treatment"];
-    console.log(response, "grupppp");
+  const getTreatment = (perma) => {
+    treatment = $treatments.find((x) => x.perma == perma.treatment);
   };
   $: getTreatment($params);
-  console.log(treatment, "artık bu treatment");
 </script>
 
+<svelte:head>
+  {#if treatment}
+    <title>Sanitas Health Travel | {treatment.title}</title>
+    <meta property="description" content={treatment.shortDesc} />
+  {/if}
+</svelte:head>
 {#if treatment}
   <div class="relative bg-primary h-96 w-full z-1">
     <img
@@ -36,7 +47,6 @@
         <TreatmentDetail {treatment} />
       </div>
       <div class="mb-8"><SmallForm /></div>
-
     </div>
   </div>
 {/if}

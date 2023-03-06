@@ -11,7 +11,6 @@
   import SmallForm from "$components/Form/SmallForm.svelte";
 
   const params = useParams();
-  console.log($params);
   let groupTreatment;
   let group;
   const getGroup = async () => {
@@ -19,17 +18,13 @@
     group = response["group"];
     if (group && !group.department) {
       getTreatmentViaGroupId(group._id);
-      console.log("sfaefafef");
     }
-    console.log(group, "grupppp");
     getTreatments();
   };
   $: getGroup($params);
   const getTreatmentViaGroupId = async (groupId) => {
-    console.log(groupId, "dddd");
     let response = await RestService.getTreatmentViaGroupId(groupId);
     groupTreatment = response["treatment"];
-    console.log(groupTreatment,"fkfkfk")
   };
 
   let treatments;
@@ -38,7 +33,12 @@
     treatments = response["treatments"];
   };
 </script>
-
+<svelte:head>
+  {#if group}
+  <title>Sanitas Health Travel | {group.title}</title>
+  <meta property="description" content={group.description} />
+  {/if}
+</svelte:head>
 {#if group && group.department}
   <div class="relative bg-primary h-96 w-full z-1 mb-10 ">
     <img

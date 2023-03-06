@@ -2,27 +2,23 @@
   import ContactHero from "./ContactHero.svelte";
   import RestService from "$services/rest";
   import { lang, general, translate } from "$services/store";
-  import Input from "$components/Form/Input.svelte";
-  import Textarea from "$components/Form/Textarea.svelte";
   import ContactForm from "$components/Form/ContactForm.svelte";
 
   let contact;
-  let name = undefined;
-  let email;
-  let note;
-  let subject;
-  let phone;
+
   const addMessage = async () => {};
   addMessage();
 
   const getContact = async () => {
     let response = await RestService.getContacts($lang);
     contact = response["contacts"][0];
-    console.log(contact, "contacts");
   };
   getContact();
 </script>
-
+<svelte:head>
+  <title>Sanitas Health Travel | {$translate.contact}</title>
+  <meta property="description" content={$general.shortDesc} />
+</svelte:head>
 <div class="relative bg-primary h-96 w-full z-1">
   <img
     class="absolute top-0 h-96 w-full opacity-10 right-0 object-cover z-1"

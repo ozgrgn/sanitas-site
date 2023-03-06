@@ -9,7 +9,6 @@
    export let iconClass;
   export let customClass;
   export let readMoreButton;
-  console.log(readMoreButton,"readMoreButton")
 </script>
 <div class="{customClass} flex flex-col justify-center pr-2 {color}">
   <div class="grid grid-cols-4 flex justify-center items-center ">

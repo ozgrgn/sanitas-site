@@ -12,7 +12,6 @@
       treatment,
     );
     faqs = response["faqs"];
-    console.log(faqs, "faqs");
   };
   getFaqs();
   </script>

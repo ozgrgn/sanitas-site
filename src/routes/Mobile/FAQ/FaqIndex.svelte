@@ -1,27 +1,26 @@
 <script>
   import FeaturesCard from "$components/FeaturesCard.svelte";
   import Title from "$components/Title.svelte";
-  import AboutHero from "./FaqHero.svelte";
-  import AboutTreatmentGroup from "./FaqTreatmentGroup.svelte";
   import { lang,features,translate,general } from "$services/store";
   import RestService from "$services/rest";
   import FaqHero from "./FaqHero.svelte";
   import FaqDetail from "$components/FaqDetail.svelte";
 
 let faqs=[]
-console.log($features,"featuressss")
 
   const getFaqs = async () => {
     let response = await RestService.getFaqs($lang,true,undefined,true);
     faqs = response["faqs"];
     faqs[0].active=true
-    console.log(faqs, "faqs");
   };
   getFaqs();
 
 
 </script>
-
+<svelte:head>
+  <title>Sanitas Health Travel | {$translate.faq}</title>
+  <meta property="description" content={$general.shortDesc} />
+</svelte:head>
 <div class="relative bg-primary h-96 w-full z-1">
   <img
     class="absolute top-0 h-96 w-full opacity-10 right-0 object-cover z-1"
