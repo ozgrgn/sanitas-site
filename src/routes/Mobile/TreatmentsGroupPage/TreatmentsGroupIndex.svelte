@@ -36,7 +36,7 @@
 <svelte:head>
   {#if group}
     <title>Sanitas Health Travel | {group.title}</title>
-    <meta property="description" content={group.description} />
+    <meta name="description" content={group.description} />
   {/if}
 </svelte:head>
 {#if group && group.department}

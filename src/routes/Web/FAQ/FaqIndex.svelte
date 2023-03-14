@@ -21,7 +21,7 @@ let faqs=[]
 </script>
 <svelte:head>
   <title>Sanitas Health Travel | {$translate.faq}</title>
-  <meta property="description" content={$general.shortDesc} />
+  <meta name="description" content={$general.shortDesc} />
 </svelte:head>
 <div class="relative bg-primary h-96 w-full z-1">
   <img

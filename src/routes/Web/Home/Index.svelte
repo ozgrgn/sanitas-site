@@ -26,7 +26,7 @@
 
 <svelte:head>
   <title>Sanitas Health Travel</title>
-  <meta property="description" content={$general.shortDesc} />
+  <meta name="description" content={$general.shortDesc} />
 </svelte:head>
 {#if sliders}
   <div class="relative">
