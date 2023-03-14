@@ -7,7 +7,6 @@
   import { lang, general } from "$services/store";
   import RestService from "$services/rest";
 
-  console.log($general, "gsggssgaaaaaaaaaaaaaa");
   let sliders;
   let faqs = [];
 
@@ -26,7 +25,9 @@
 
 <svelte:head>
   <title>Sanitas Health Travel</title>
+  {#if $general}
   <meta name="description" content={$general.shortDesc} />
+  {/if}
 </svelte:head>
 {#if sliders}
   <div class="relative">

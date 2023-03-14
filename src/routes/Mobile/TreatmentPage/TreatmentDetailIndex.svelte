@@ -24,8 +24,8 @@
 
 <svelte:head>
   {#if treatment}
-    <title>Sanitas Health Travel | {treatment.title}</title>
-    <meta name="description" content={treatment.shortDesc} />
+    <title>Sanitas Health Travel | {treatment?.title}</title>
+    <meta name="description" content={treatment?.shortDesc} />
   {/if}
 </svelte:head>
 {#if treatment}

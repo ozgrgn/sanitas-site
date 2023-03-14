@@ -47,14 +47,14 @@
               </p>
             </div>
             <div class="mt-10 flex justify-end">
-              {#if translate}
+              {#if $translate}
                 <PopupButton
-                buttonText={$translate.book_an_appointment}
+                buttonText={$translate?.book_an_appointment}
                   customCss="min-h-16 w-52 py-3 px-2 rounded-sm border-2 border-primary text-sm font-semibold px-6 bg-transparent hover:border-primary hover:bg-primary hover:text-white text-primary"
                 />
              
               {/if}
-              {#if general}
+              {#if $general}
                 <a
                   href="https://api.whatsapp.com/send?phone={$general.whatsapp}"
                 >

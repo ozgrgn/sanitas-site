@@ -40,11 +40,11 @@
            
             </div>
           
-            <div class="mt-10 flex justify-end gap-2 mx-2">
+            <div class="mt-10 flex gap-2 mx-2">
               {#if translate}
               <PopupButton
                 buttonText={$translate.book_an_appointment}
-                  customCss="min-h-16 w-52 py-2 px-2 rounded-sm border-2 border-primary text-md font-semibold px-6 bg-white/50 hover:border-primary hover:bg-primary hover:text-white text-primary"
+                  customCss="min-h-16 w-1/2 py-2 px-2 rounded-sm border-2 border-primary text-md font-semibold px-2 bg-white/50 hover:border-primary hover:bg-primary hover:text-white text-primary"
                 />
               {/if}
               {#if general}
@@ -53,7 +53,7 @@
                   href="https://api.whatsapp.com/send?phone={$general.whatsapp}"
                 >
                   <button
-                    class="flex w-full py-3 rounded-sm items-center justify-center text-sm font-semibold  text-md bg-primary text-white hover:bg-whatsapp hover:border-whatsapp "
+                    class="w-full flex py-3 rounded-sm items-center justify-center text-sm font-semibold  text-md bg-primary text-white hover:bg-whatsapp hover:border-whatsapp "
                     ><svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="pt-1"

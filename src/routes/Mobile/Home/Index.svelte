@@ -25,7 +25,9 @@ console.log($general,"gegreeger")
 
 <svelte:head>
   <title>Sanitas Health Travel</title>
-  <meta name="description" content={$general.shortDesc} />
+  {#if $general}
+  <meta name="description" content={$general?.shortDesc} />
+  {/if}
 </svelte:head>
 {#if sliders}
   <div class="relative">

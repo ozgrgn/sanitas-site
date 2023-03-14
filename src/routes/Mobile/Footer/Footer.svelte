@@ -26,11 +26,11 @@
 
 {#if $general && $translate}
   <footer class="relative bg-primary" aria-labelledby="footer-heading">
-    <div class="max-w-7xl py-12 mx-2  md:mx-auto ">
-      <div class="pb-8 md:grid xl:grid-cols-6 xl:gap-2">
-        <div class="md:grid md:grid-cols-2 gap-16 xl:col-span-4">
+    <div class="max-w-7xl py-12 mx-2 px-2 md:mx-auto ">
+      <div class="pb-8 :grid xl:grid-cols-6 xl:gap-2">
+        <div class="lg:grid lg:grid-cols-2 gap-16 xl:col-span-4">
           <div class="first">
-            <div class="md:grid-cols-1 md:gap-8">
+            <div class="lg:grid-cols-1 md:gap-8">
               <div>
                 <h3
                   class="text-sm font-semibold text-white tracking-wider uppercase"
@@ -190,7 +190,7 @@
             </svg>
           </a>
         </div> </div>
-        <p class="mt-8 text-sm text-white md:mt-0 md:order-1">
+        <p class="mt-8 text-sm text-center pt-2 text-white md:mt-0 md:order-1">
           {$general?.copright}
         </p>
      

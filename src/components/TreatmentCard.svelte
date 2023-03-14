@@ -14,10 +14,10 @@
   >
     <div class="">
       <h2 class=" text-2xl text-primary tracking-tight text-left">
-        {value.title}
+        {value?.title}
       </h2>
       <p class="text-left text-primary text-sm pt-3">
-        {value.shortDesc}
+        {value?.shortDesc}
       </p>
     </div>
     <a class="text-left flex" href="/"
