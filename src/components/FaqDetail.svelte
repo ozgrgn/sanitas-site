@@ -20,9 +20,9 @@
         on:keydown
         class="flex items-center justify-between w-full p-4"
       >
-        <h2 class="font-semibold text-primary">
+        <h3 class="font-semibold text-primary">
           {faq.question}
-        </h2>
+        </h3>
 
         <span class="text-gray-400 bg-gray-200 rounded-full">
           {#if faq.active}

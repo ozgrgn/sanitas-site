@@ -13,7 +13,7 @@
   on:focus
   on:blur>
   {#if value.hover}
-  <img transition:fade={{ y: 200, duration: 200 }} class="bg-primary absolute w-full h-40 object-fit rounded-t-md" src={value.image} alt="" />
+  <img transition:fade={{ y: 200, duration: 200 }} class="bg-primary absolute w-full h-40 object-cover rounded-t-md" src={value.image} alt="" />
 <div class="absolute opacity-70 h-full bg-primary w-full"></div>
 {/if}
   <div

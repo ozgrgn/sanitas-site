@@ -132,12 +132,7 @@
           class="flex items-center px-2   h-[2rem] bg-white"
           href={`/${$lang}/contact`}>{$translate.contact}</a
         >
-        <a
-          use:link
-          on:click={() => changeNavStatus()}
-          class="flex items-center px-2   h-[2rem] bg-white"
-          href={`/${$lang}/faqs`}>{$translate.faq}</a
-        >
+        
         <a
           use:link
           on:click={() => changeNavStatus()}

@@ -14,14 +14,13 @@
     <QuillHtml text={treatment.text} />
   </div>
   <div class="flex justify-center">
-
-  <div class="h-full lg:w-2/3 shadow-xl border border-primary/5 pl-4 pr-2 py-4 my-10">
-  
-    <QuillHtml text={treatment.text2} />
-  </div>
+    <div
+      class="h-full lg:w-2/3 shadow-xl border border-primary/5 pl-4 pr-2 py-4 my-10"
+    >
+      <QuillHtml text={treatment.text2} />
+    </div>
   </div>
   <div class="sticky top-0 h-full">
     <TreatmentFaq {faqs} treatment={treatment._id} />
   </div>
-
 </div>

@@ -50,7 +50,7 @@
               {#if $translate}
                 <PopupButton
                 buttonText={$translate?.book_an_appointment}
-                  customCss="min-h-16 w-52 py-3 px-2 rounded-sm border-2 border-primary text-sm font-semibold px-6 bg-transparent hover:border-primary hover:bg-primary hover:text-white text-primary"
+                  customCss="min-h-16 w-52 py-3 px-2 rounded-sm border-2 border-primary text-sm font-semibold px-6 bg-transparent hover:border-primary hover:bg-primary shadow hover:text-white text-primary"
                 />
              
               {/if}
@@ -59,7 +59,7 @@
                   href="https://api.whatsapp.com/send?phone={$general.whatsapp}"
                 >
                   <button
-                    class="flex py-3 px-2 rounded-sm items-center justify-center text-sm font-semibold min-h-16 w-52 border-primary text-md bg-primary text-white hover:bg-whatsapp hover:border-whatsapp ml-4"
+                    class="flex py-3 px-2 rounded-sm border-2 items-center justify-center text-sm font-semibold min-h-16 w-52 border-primary text-md bg-primary shadow text-white hover:bg-whatsapp hover:border-whatsapp ml-4"
                     ><svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="pt-1"

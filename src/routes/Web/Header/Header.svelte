@@ -25,7 +25,6 @@
           ><span>{$translate.homePage} </span></a
         >
         <a use:link href={`/${$lang}/about`} class="">{$translate.about}</a>
-        <a use:link href={`/${$lang}/faqs`} class="">FAQ</a>
 
         <div class="dropdown inline-block relative z-20">
           <button class="bg-white rounded inline-flex items-center rounded-xl">
