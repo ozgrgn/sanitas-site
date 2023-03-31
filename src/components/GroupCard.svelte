@@ -10,7 +10,7 @@
 
   <img class="w-full rounded-t-md " src={value.image} alt="" />
   <div
-    class="absolute border-2 border-white/90 bg-secondary shadow-2xl drop-shadow rounded-xl bg-white 2xl:top-48 xl:top-48 lg:top-36 top-36 left-8 lg:h-16 lg:w-16 h-16 w-16 flex flex-col justify-center items-center"
+    class="absolute border-2 border-white/90 bg-secondary shadow-2xl drop-shadow rounded-xl bg-white 2xl:top-60 xl:top-48 lg:top-36 top-36 left-8 lg:h-16 lg:w-16 h-16 w-16 flex flex-col justify-center items-center"
   >
  
       {@html value.svg}
