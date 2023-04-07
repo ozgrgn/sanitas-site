@@ -4,7 +4,7 @@
   import Faq from "./Faq.svelte";
   import Reviews from "./Reviews.svelte";
   import HomeTreatmentsGroup from "./HomeTreatmentsGroup.svelte";
-  import { lang, general } from "$services/store";
+  import { lang, general,translate } from "$services/store";
   import RestService from "$services/rest";
 
   let sliders;
@@ -39,7 +39,7 @@
   </div>
   <HomeTreatmentsGroup />
   <div class=" mt-20">
-    <Faq {faqs} />
+    <Faq {faqs} translate={$translate} />
   </div>
   <Reviews />
 {/if}

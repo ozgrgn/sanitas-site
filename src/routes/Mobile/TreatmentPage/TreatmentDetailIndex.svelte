@@ -16,10 +16,10 @@
 
   // };
   let treatment;
-  const getTreatment = (perma) => {
-    treatment = $treatments.find((x) => x.perma == perma.treatment);
+  const getTreatment = (perma,lang) => {
+    treatment = $treatments.find((x) => x.perma == perma.treatment && x.lang==lang);
   };
-  $: getTreatment($params);
+  $: getTreatment($params,$lang);
 </script>
 
 <svelte:head>
@@ -29,9 +29,9 @@
   {/if}
 </svelte:head>
 {#if treatment}
-  <div class="relative bg-primary h-96 w-full z-1">
+  <div class="relative bg-primary h-72 w-full z-1">
     <img
-      class="absolute top-0 h-96 w-full opacity-10 right-0 object-cover z-1"
+      class="absolute top-0 h-72 w-full opacity-10 right-0 object-cover z-1"
       src="/assets/img/treatments/back1.jpeg"
       alt=""
     />

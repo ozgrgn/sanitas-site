@@ -40,9 +40,9 @@
   {/if}
 </svelte:head>
 {#if group && group.department}
-  <div class="relative bg-primary h-96 w-full z-1  ">
+  <div class="relative bg-primary h-72 w-full z-1  ">
     <img
-      class="absolute top-0 h-96 w-full opacity-10 right-0 object-cover z-1"
+      class="absolute top-0 h-72 w-full opacity-10 right-0 object-cover z-1"
       src="/assets/img/treatments/back1.jpeg"
       alt=""
     />
@@ -64,9 +64,9 @@
     </div>
   </div>
 {:else if groupTreatment}
-  <div class="relative bg-primary h-96 w-full z-1">
+  <div class="relative bg-primary h-72 w-full z-1">
     <img
-      class="absolute top-0 h-96 w-full opacity-10 right-0 object-cover z-1"
+      class="absolute top-0 h-72 w-full opacity-10 right-0 object-cover z-1"
       src="/assets/img/treatments/back1.jpeg"
       alt=""
     />

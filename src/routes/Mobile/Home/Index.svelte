@@ -3,30 +3,29 @@
   import Faq from "./Faq.svelte";
   import Reviews from "./Reviews.svelte";
   import HomeTreatmentsGroup from "./HomeTreatmentsGroup.svelte";
-  import { lang, general } from "$services/store";
+  import { lang, general, translate } from "$services/store";
   import RestService from "$services/rest";
   import MobMainSlider from "$components/Sliders/MobMainSlider.svelte";
 
   let sliders;
   let faqs = [];
-console.log($general,"gegreeger")
-  const getSliders = async () => {
-    let response = await RestService.getSliders($lang);
+  const getSliders = async (lang) => {
+    let response = await RestService.getSliders(lang);
     sliders = response["sliders"];
   };
-  getSliders();
-  const getFaqs = async () => {
-    let response = await RestService.getFaqs($lang, true, undefined, true);
+  $: getSliders($lang);
+  const getFaqs = async (lang) => {
+    let response = await RestService.getFaqs(lang, true, undefined, true);
     faqs = response["faqs"];
     faqs[0].active = true;
   };
-  getFaqs();
+  $: getFaqs($lang);
 </script>
 
 <svelte:head>
   <title>Sanitas Health Travel</title>
   {#if $general}
-  <meta name="description" content={$general?.shortDesc} />
+    <meta name="description" content={$general?.shortDesc} />
   {/if}
 </svelte:head>
 {#if sliders}
@@ -39,7 +38,7 @@ console.log($general,"gegreeger")
   </div>
   <HomeTreatmentsGroup />
   <div class=" mt-10">
-    <Faq {faqs} />
+    <Faq {faqs} translate={$translate} />
   </div>
   <Reviews />
 {/if}

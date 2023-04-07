@@ -1,7 +1,7 @@
 <script>
   import Svg from "../assets/svg.json";
   import { link } from "svelte-navigator";
-  import { lang } from "$services/store";
+  import { lang,translate } from "$services/store";
 
   export let value;
 </script>
@@ -22,7 +22,7 @@
     </div>
     <a class="text-left flex" href="/"
       >{@html Svg.forward}
-      <p class="pl-1 text-sm italic ">Read More</p>
+      <p class="pl-1 text-sm italic ">{$translate?.read_more}</p>
     </a>
   </div>
 </a>

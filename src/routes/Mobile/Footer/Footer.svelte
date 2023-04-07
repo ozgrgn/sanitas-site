@@ -14,6 +14,7 @@
   let newLang;
 
   const langTrigger = (_lang) => {
+    
     lang.set(_lang);
     let splittedPathName = window.location.pathname.split("/");
     navigate(
@@ -21,6 +22,7 @@
         splittedPathName[3] ? "/" + splittedPathName[3] : ""
       }`
     );
+    window.scrollTo(0, 0);
   };
 </script>
 

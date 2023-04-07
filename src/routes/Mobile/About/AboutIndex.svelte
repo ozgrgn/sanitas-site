@@ -42,6 +42,6 @@
     </div>
   </div>
   {#if about?.about_right}
-    <div class=" pt-10"><QuillHtml text={about?.about_right} /></div>
+    <div class=" py-10"><QuillHtml text={about?.about_right} /></div>
   {/if}
 </div>

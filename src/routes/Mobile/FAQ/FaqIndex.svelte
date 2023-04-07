@@ -8,12 +8,12 @@
 
 let faqs=[]
 
-  const getFaqs = async () => {
-    let response = await RestService.getFaqs($lang,true,undefined,true);
+  const getFaqs = async (lang) => {
+    let response = await RestService.getFaqs(lang,true,undefined,true);
     faqs = response["faqs"];
     faqs[0].active=true
   };
-  getFaqs();
+  $:getFaqs($lang);
 
 
 </script>

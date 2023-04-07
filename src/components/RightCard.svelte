@@ -1,7 +1,7 @@
 <script>
   import Svg from "../assets/svg.json";
   import { fade } from "svelte/transition";
-  import { lang } from "$services/store";
+  import { lang,translate } from "$services/store";
 
   export let value;
 </script>
@@ -29,7 +29,7 @@
     </div>
     <a class="text-left flex" href={`/${$lang}/departments/${value.perma}`}
       >{@html Svg[value.hover?"forwardWhite":"forward"]}
-      <p class="pl-1 text-sm italic ">Read More</p>
+      <p class="pl-1 text-sm italic ">{$translate?.read_more}</p>
     </a>
   </div>
 </div>

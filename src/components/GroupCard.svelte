@@ -1,7 +1,7 @@
 <script>
   import Svg from "../assets/svg.json";
   import { link } from "svelte-navigator";
-  import { lang } from "$services/store";
+  import { lang,translate } from "$services/store";
 
   export let value;
 </script>
@@ -16,7 +16,7 @@
       {@html value.svg}
   </div>
   <div
-    class="h-56 w-full bg-light-300 pt-12 xl:px-7 px-2 rounded-b-md flex flex-col justify-around"
+    class="h-60 w-full bg-light-300 pt-12 xl:px-7 px-2 rounded-b-md flex flex-col justify-around"
   >
     <div class="h-28 px-2 md:px-0">
       <h2 class=" text-2xl text-primary tracking-tight text-left">
@@ -28,7 +28,7 @@
     </div>
     <a class="text-left flex px-2 md:px-0" href="/"
       >{@html Svg.forward}
-      <p class="pl-1  text-sm italic ">Read More</p>
+      <p class="pl-1  text-sm italic ">{$translate?.read_more}</p>
     </a>
   </div>
 </a>

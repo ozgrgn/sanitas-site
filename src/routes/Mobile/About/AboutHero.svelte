@@ -15,7 +15,7 @@
   >
     <span class="">{about.about_title}</span>
   </div>
-  <p class="text-white/90  pt-2 md:pt-8 px-4">
+  <p class="text-white/90 pt-2 md:pt-8 px-4">
     {about.about_left}
   </p>
 {/if}
