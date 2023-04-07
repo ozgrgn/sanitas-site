@@ -11,7 +11,6 @@
     groups,
     langs,
   } from "$services/store";
-  let newLang;
   const langTrigger = (_lang) => {
     lang.set(_lang);
     let splittedPathName = window.location.pathname.split("/");
@@ -97,7 +96,7 @@
               <h3
                 class="text-sm font-semibold text-white tracking-wider uppercase"
               >
-                {$translate.contact}
+                {$translate?.contact}
               </h3>
               {#if $general}
                 <div class="px-2">
@@ -120,11 +119,11 @@
         </div>
         <div class="mt-12 xl:mt-0">
           <h3 class="text-sm font-semibold text-white tracking-wider uppercase">
-            {$translate.language}
+            {$translate?.language}
           </h3>
           {#if $langs}
             <LangSelect
-              value={newLang}
+              value={$lang}
               change={(value) => langTrigger(value)}
               values={$langs}
               title={"Lang"}

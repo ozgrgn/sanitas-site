@@ -16,8 +16,8 @@
   getContact();
 </script>
 <svelte:head>
-  <title>Sanitas Health Travel | {$translate.contact}</title>
-  <meta name="description" content={$general.shortDesc} />
+  <title>Sanitas Health Travel | {$translate?.contact}</title>
+  <meta name="description" content={$general?.shortDesc} />
 </svelte:head>
 <div class="relative bg-primary h-96 w-full z-1">
   <img
@@ -37,7 +37,7 @@
       {#if $general}
         <div class="lg:w-2/5 mt-5">
           <div class="flex flex-col">
-            <img src={$general.map1} alt="" />
+            <img src={$general?.map1} alt="" />
             <div class="flex mt-4 ">
               <svg
                 class="h-6 w-6"
@@ -48,12 +48,12 @@
                   d="M21.384,17.752a2.108,2.108,0,0,1-.522,3.359,7.543,7.543,0,0,1-5.476.642C10.5,20.523,3.477,13.5,2.247,8.614a7.543,7.543,0,0,1,.642-5.476,2.108,2.108,0,0,1,3.359-.522L8.333,4.7a2.094,2.094,0,0,1,.445,2.328A3.877,3.877,0,0,1,8,8.2c-2.384,2.384,5.417,10.185,7.8,7.8a3.877,3.877,0,0,1,1.173-.781,2.092,2.092,0,0,1,2.328.445ZM10.571,2.771a1,1,0,1,0,.858,1.806,6,6,0,0,1,7.994,7.994,1,1,0,0,0,1.807.858A8,8,0,0,0,10.571,2.771Zm4.844,10.057a1,1,0,0,0,1.414,0,4,4,0,1,0-5.657-5.656,1,1,0,0,0,1.414,1.414,2.048,2.048,0,0,1,2.829,0,2,2,0,0,1,0,2.828A1,1,0,0,0,15.415,12.828Z"
                 /></svg
               >
-              <span class="font-semibold px-2"> {$translate.phone}: </span>
+              <span class="font-semibold px-2"> {$translate?.phone}: </span>
               <a
-                href="tel:{$general.phone1}"
+                href="tel:{$general?.phone1}"
                 class="font-medium text-secondary"
               >
-                {$general.phone1}
+                {$general?.phone1}
               </a>
             </div>
             <div class="flex pt-4">
@@ -66,12 +66,12 @@
                   d="M22,5V9L12,13,2,9V5A1,1,0,0,1,3,4H21A1,1,0,0,1,22,5ZM2,11.154V19a1,1,0,0,0,1,1H21a1,1,0,0,0,1-1V11.154l-10,4Z"
                 /></svg
               >
-              <span class="font-semibold px-2"> {$translate.mail}: </span>
+              <span class="font-semibold px-2"> {$translate?.mail}: </span>
               <a
-                href="mailto:{$general.email1}"
+                href="mailto:{$general?.email1}"
                 class="font-medium text-secondary"
               >
-                {$general.email1}
+                {$general?.email1}
               </a>
             </div>
             <div class="flex pt-4">
@@ -90,10 +90,10 @@
               >
               <span class="font-semibold px-2"> Whatsapp: </span>
               <a
-                href="https://wa.me/{$general.whatsapp}"
+                href="https://wa.me/{$general?.whatsapp}"
                 class="font-medium text-secondary"
               >
-                {$general.whatsapp}
+                {$general?.whatsapp}
               </a>
             </div>
             <div class="flex pt-4">
@@ -105,10 +105,10 @@
                 style="fill:#4394a8;"
                 d="M12,22H12v0a12.816,12.816,0,0,0,7.988-12A7.992,7.992,0,1,0,4.008,10,12.816,12.816,0,0,0,12,22v0ZM10,10a2,2,0,1,1,2,2A2,2,0,0,1,10,10Z"/></svg
               >
-              <span class="font-semibold px-2"> {$translate.address}: </span>
+              <span class="font-semibold px-2"> {$translate?.address}: </span>
               <span class="font-medium text-secondary">
-                {$general.address1}
-                {$general.address2}
+                {$general?.address1}
+                {$general?.address2}
               </span>
             </div>
           </div>

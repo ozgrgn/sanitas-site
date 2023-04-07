@@ -4,11 +4,11 @@
 
   import FeaturesCard from "$components/FeaturesCard.svelte";
   let features;
-  const getFeatures = async () => {
-    let response = await RestService.getFeatures(undefined, undefined, $lang);
+  const getFeatures = async (lang) => {
+    let response = await RestService.getFeatures(lang);
     features = response["features"];
   };
-  getFeatures();
+  $:getFeatures($lang);
 </script>
 
 <div class="container mx-auto flex justify-center shadow-2xl w-4/5">

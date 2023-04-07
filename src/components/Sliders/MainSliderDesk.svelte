@@ -30,7 +30,7 @@
         >
           <div class="flex flex-col justify-center px-28">
             <div class="h-fit flex justify-end">
-              <h1 class="text-7xl py-2 px-5 bg-primary w-fit font-extrabold">
+              <h1 class="text-6xl py-2 px-5 bg-primary w-fit font-extrabold">
                 {slider.title1}
               </h1>
             </div>
@@ -41,8 +41,8 @@
                 </h2>
               </div>
             </div>
-            <div class="mt-5 z-2">
-              <p class="h-16 text-white font-semibold text-end text-lg">
+            <div class="mt-5 ">
+              <p class="h-16 text-primary font-semibold text-end text-lg">
                 {@html slider?.description}
               </p>
             </div>
@@ -50,7 +50,7 @@
               {#if $translate}
                 <PopupButton
                 buttonText={$translate?.book_an_appointment}
-                  customCss="min-h-16 w-52 py-3 px-2 rounded-sm border-2 border-primary text-sm font-semibold px-6 bg-transparent hover:border-primary hover:bg-primary shadow hover:text-white text-primary"
+                  customCss="min-h-16 w-52 py-3 px-2 rounded-sm border-2 border-primary text-sm font-semibold  bg-transparent hover:border-primary hover:bg-primary shadow-lg hover:text-white text-primary"
                 />
              
               {/if}

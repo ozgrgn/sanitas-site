@@ -6,11 +6,11 @@ export let treatment
 </script>
 {#if $translate}
 <div class="flex text-lg font-semibold text-white pt-40 px-4">
-  <a use:link href={`/${$lang}/home`}> {$translate.homePage} </a>
+  <a use:link href={`/${$lang}/home`}> {$translate?.homePage} </a>
   <div class=" w-1 h-1 m-3 mt-3 bg-white  rounded-full" />
-  {$translate.treatments}
+  {$translate?.treatments}
   <div class=" w-1 h-1 m-3 mt-3 bg-white   rounded-full" />
-  {treatment.title}
+  {treatment?.title}
 </div>
 <div
   class="text-6xl text-green-800  tracking-tight w-fit pt-8 border-b-4 border-green-800  h-28 mx-4 "

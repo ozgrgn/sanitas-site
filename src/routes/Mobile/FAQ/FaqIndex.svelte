@@ -18,8 +18,8 @@ let faqs=[]
 
 </script>
 <svelte:head>
-  <title>Sanitas Health Travel | {$translate.faq}</title>
-  <meta name="description" content={$general.shortDesc} />
+  <title>Sanitas Health Travel | {$translate?.faq}</title>
+  <meta name="description" content={$general?.shortDesc} />
 </svelte:head>
 <div class="relative bg-primary h-96 w-full z-1">
   <img
@@ -35,7 +35,7 @@ let faqs=[]
 </div>
 <div class="container mx-auto mt-8 px-4 mb-10">
   <div class="">
-    <Title title1={$translate.faq1} title2={$translate.faq2} />
+    <Title title1={$translate?.faq1} title2={$translate?.faq2} />
   
 <FaqDetail {faqs}/>
    

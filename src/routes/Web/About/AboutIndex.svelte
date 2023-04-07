@@ -8,17 +8,20 @@
   import QuillHtml from "$components/QuillHtml.svelte";
 
   let about;
-
+console.log($general,$translate)
   const getAbout = async () => {
     let response = await RestService.getAbouts($lang);
     about = response["abouts"][0];
+    console.log(about)
   };
   getAbout();
 </script>
 
 <svelte:head>
-  <title>Sanitas Health Travel | {$translate.about}</title>
+  {#if $general}
+  <title>Sanitas Health Travel | {$translate?.about}</title>
   <meta name="description" content={$general.shortDesc} />
+  {/if}
 </svelte:head>
 <div class="relative bg-primary h-96 w-full z-1">
   <img
@@ -34,7 +37,7 @@
 </div>
 <div class="container mx-auto grid grid-cols-6 mt-8 gap-10">
   <div class="col-span-4">
-    <Title title1="Welcome to" title2="Sanitas Health Travel" />
+    <Title title1={about?.about_subTitle1} title2={about?.about_subTitle2} />
     <div class="grid grid-cols-2 gap-8">
       {#if $features}
         {#each $features as feature}
@@ -64,7 +67,7 @@
       {/if}
     </div>
     {#if about?.about_right}
-      <div class=" pt-10"><QuillHtml text={about?.about_right} /></div>
+      <div class=" py-10"><QuillHtml text={about?.about_right} /></div>
     {/if}
   </div>
   <div class="-mt-28 z-20 bg-white shadow-2xl col-span-2">
@@ -73,6 +76,7 @@
     >
       <h3>{$translate?.treatments}</h3>
     </div>
-    <AboutTreatmentGroup />
+    <div class="">
+    <AboutTreatmentGroup /></div>
   </div>
 </div>

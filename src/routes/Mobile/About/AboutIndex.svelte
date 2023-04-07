@@ -11,13 +11,16 @@
   const getAbout = async () => {
     let response = await RestService.getAbouts($lang);
     about = response["abouts"][0];
+    console.log(about)
   };
   getAbout();
 </script>
 
 <svelte:head>
-  <title>Sanitas Health Travel | {$translate.about}</title>
-  <meta name="description" content={$general.shortDesc} />
+  {#if $general}
+  <title>Sanitas Health Travel | {$translate?.about}</title>
+  <meta name="description" content={$general?.shortDesc} />
+  {/if}
 </svelte:head>
 <div class="relative bg-primary h-96 w-full z-1">
   <img
@@ -31,9 +34,9 @@
     <AboutHero {about} />
   </div>
 </div>
-<div class="container px-4  mt-8 ">
+<div class="container px-4 mt-8">
   <div class="">
-    <Title title1="Welcome to" title2="Sanitas Health Travel" />
+    <Title title1={about?.about_subTitle1} title2={about?.about_subTitle2} />
     <div class="flex flex-col gap-8">
       <MobFeaturesSlider features={$features} />
     </div>

@@ -20,7 +20,7 @@
 class="text-3xl font-semibold text-center text-gray-800 lg:text-4xl text-white"
 >
 {#if $translate}
-<Title title1={$translate.review1} title2={$translate.review2}></Title>
+<Title title1={$translate?.review1} title2={$translate?.review2}></Title>
 {/if}
 </h3>
 </div>
@@ -121,7 +121,7 @@ class="text-3xl font-semibold text-center text-gray-800 lg:text-4xl text-white"
                   </div>
                 </div>
                 <a href={review.reviewLink}>
-                  <div class="review-readmore">{$translate.read_more}</div></a
+                  <div class="review-readmore">{$translate?.read_more}</div></a
                 >
                 <a
                   class="review-link"
@@ -129,7 +129,7 @@ class="text-3xl font-semibold text-center text-gray-800 lg:text-4xl text-white"
                   target="_blank"
                   rel="noopener noreferrer nofollow"
                   ><div class="review-logo-container">
-                    <div class="review-postedon">{$translate.posted_on}</div>
+                    <div class="review-postedon">{$translate?.posted_on}</div>
                     <div title="Google" class="review-icon w-28">
                       <div>
                         <img

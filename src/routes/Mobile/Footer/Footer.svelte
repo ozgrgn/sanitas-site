@@ -98,7 +98,7 @@
               <h3
                 class="text-sm font-semibold text-white tracking-wider uppercase"
               >
-                {$translate.contact}
+                {$translate?.contact}
               </h3>
               {#if $general}
                 <div class="px-2">
@@ -121,7 +121,7 @@
         </div>
         <div class="mt-12 xl:mt-0">
           <h3 class="text-sm font-semibold text-white tracking-wider uppercase">
-            {$translate.language}
+            {$translate?.language}
           </h3>
           {#if $langs}
             <LangSelect

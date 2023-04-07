@@ -20,7 +20,7 @@
 class="text-3xl font-semibold text-center text-gray-800 lg:text-4xl text-white"
 >
 {#if $translate}
-<Title title1={$translate.review1} title2={$translate.review2}></Title>
+<Title title1={$translate?.review1} title2={$translate?.review2}></Title>
 {/if}
 </h3>
 </div>
@@ -60,52 +60,52 @@ class="text-3xl font-semibold text-center text-gray-800 lg:text-4xl text-white"
                 <a
                   class="review-header "
                   rel="external"
-                  href={review.reviewLink}
+                  href={review?.reviewLink}
                 >
                   <div class="review-avatar">
                     <div
                       class="review-avatar-bg flex flex-col justify-center text-center "
                     >
-                      {#if review.reviewAvatar}
+                      {#if review?.reviewAvatar}
                         <img
-                          src={`https://super--bucket.s3.eu-west-3.amazonaws.com/${review.reviewAvatar}`}
+                          src={`https://super--bucket.s3.eu-west-3.amazonaws.com/${review?.reviewAvatar}`}
                           alt=""
                           width="44"
                           height="44"
                           class="ReviewAvatar__Avatar-sc-1lraoly-2 TOyBs"
                         />
                       {:else}
-                        {review.reviewName.charAt(0)}
+                        {review?.reviewName.charAt(0)}
                       {/if}
                     </div>
                   </div>
                   <div class="review-info">
-                    <span class="review-author">{review.reviewName}</span>
+                    <span class="review-author">{review?.reviewName}</span>
                     <div class="review-info2">
                       <div class="ratings">
                         <div class="empty-stars" />
                         <div
-                          class="full-stars-tp {review.reviewPlatform ==
+                          class="full-stars-tp {review?.reviewPlatform ==
                           'Google'
                             ? 'text-custom-gcolor'
-                            : review.reviewPlatform == 'TrustPilot'
+                            : review?.reviewPlatform == 'TrustPilot'
                             ? 'text-custom-tcolor'
-                            : review.reviewPlatform == 'Facebook'
+                            : review?.reviewPlatform == 'Facebook'
                             ? 'text-custom-fcolor'
-                            : ''} {review.reviewStars == 1
+                            : ''} {review?.reviewStars == 1
                             ? 'w-1/5'
-                            : review.reviewStars == 2
+                            : review?.reviewStars == 2
                             ? 'w-2/5'
-                            : review.reviewStars == 3
+                            : review?.reviewStars == 3
                             ? 'w-3/5'
-                            : review.reviewStars == 4
+                            : review?.reviewStars == 4
                             ? 'w-4/5'
                             : 'w-full'}"
                         />
                      
                       </div>
                       <div class="review-date hidden xl:block">
-                        {review.reviewDate}
+                        {review?.reviewDate}
                       </div>
                     </div>
                   </div></a
@@ -114,25 +114,25 @@ class="text-3xl font-semibold text-center text-gray-800 lg:text-4xl text-white"
                   <div class="review-text-outer">
                     <div class="review-text-inner">
                       <div>
-                        {review.reviewText}
+                        {review?.reviewText}
                       </div>
                     </div>
                   </div>
                 </div>
-                <a href={review.reviewLink}>
-                  <div class="review-readmore">{$translate.read_more}</div></a
+                <a href={review?.reviewLink}>
+                  <div class="review-readmore">{$translate?.read_more}</div></a
                 >
                 <a
                   class="review-link"
-                  href={review.reviewLink}
+                  href={review?.reviewLink}
                   target="_blank"
                   rel="noopener noreferrer nofollow"
                   ><div class="review-logo-container">
-                    <div class="review-postedon">{$translate.posted_on}</div>
+                    <div class="review-postedon">{$translate?.posted_on}</div>
                     <div title="Google" class="review-icon w-28">
                       <div>
                         <img
-                          src="/assets/img/reviews/{review.reviewPlatform}.svg"
+                          src="/assets/img/reviews/{review?.reviewPlatform}.svg"
                           alt=""
                         />
                       </div>

@@ -47,7 +47,7 @@
       class="contact-form h-full py-5 px-5 leading-4 text-primary rounded-2xl shadow-xl border border-gray-10 w-full"
     >
       <h3 class="form-header text-xl font-bold ">
-        {$translate.form_header1}<br />{$translate.form_header2}
+        {$translate?.form_header1}<br />{$translate?.form_header2}
       </h3>
       <form class="contact__form">
         <div
@@ -55,7 +55,7 @@
             ? 'flex'
             : 'hidden'}"
         >
-          {$translate.form_sent}
+          {$translate?.form_sent}
         </div>
         <div
           class="alert-warn mt-3 contact__msg {warn == true ? '' : 'hidden'}"
@@ -68,7 +68,7 @@
             <Input
               type="text"
               name="name"
-              placeholder={$translate.name}
+              placeholder={$translate?.name}
               autocomplete="name"
               bind:value={name}
             />
@@ -78,7 +78,7 @@
               <PhoneInput
                 bind:value={phone}
                 class={" h-12  border-0 placeholder-blueGray-300 text-blueGray-600 bg-white  text-sm  focus:outline-none "}
-                placeholder={$translate.phone}
+                placeholder={$translate?.phone}
                 required={true}
                 name="phone"
                 autocomplete="phone"
@@ -93,7 +93,7 @@
               class="mt-8 bg-primary rounded-xl text-white h-10 px-5 font-bold text-center cursor-pointer capitalize shadow-xl"
               on:click={addRes}
             >
-              {$translate.form_button}</button
+              {$translate?.form_button}</button
             >
             <!-- <input
                 type="submit"

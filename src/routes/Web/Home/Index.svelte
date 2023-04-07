@@ -10,17 +10,17 @@
   let sliders;
   let faqs = [];
 
-  const getSliders = async () => {
-    let response = await RestService.getSliders($lang);
+  const getSliders = async (lang) => {
+    let response = await RestService.getSliders(lang);
     sliders = response["sliders"];
   };
-  getSliders();
-  const getFaqs = async () => {
-    let response = await RestService.getFaqs($lang, true, undefined, true);
+  $:getSliders($lang);
+  const getFaqs = async (lang) => {
+    let response = await RestService.getFaqs(lang, true, undefined, true);
     faqs = response["faqs"];
     faqs[0].active = true;
   };
-  getFaqs();
+  $:getFaqs($lang);
 </script>
 
 <svelte:head>

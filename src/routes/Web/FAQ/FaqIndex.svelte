@@ -20,7 +20,7 @@ let faqs=[]
 
 </script>
 <svelte:head>
-  <title>Sanitas Health Travel | {$translate.faq}</title>
+  <title>Sanitas Health Travel | {$translate?.faq}</title>
   <meta name="description" content={$general.shortDesc} />
 </svelte:head>
 <div class="relative bg-primary h-96 w-full z-1">
@@ -37,7 +37,7 @@ let faqs=[]
 </div>
 <div class="container mx-auto grid grid-cols-6 mt-8 gap-10">
   <div class="col-span-4">
-    <Title title1={$translate.faq1} title2={$translate.faq2} />
+    <Title title1={$translate?.faq1} title2={$translate?.faq2} />
   
 <FaqDetail {faqs}/>
    

@@ -3,7 +3,6 @@
   import LangSelect from "$components/Form/LangSelect.svelte";
   import { navigate } from "svelte-navigator";
   import { langs, lang, general } from "$services/store";
-  let newLang;
   const langTrigger = (_lang) => {
     lang.set(_lang);
     let splittedPathName = window.location.pathname.split("/");
@@ -99,14 +98,14 @@
         </a>
         {#if $langs}
           <LangSelect
-            value={newLang}
+            value={$lang}
             change={(value) => langTrigger(value)}
             values={$langs}
             title={"Lang"}
             valuesKey={"lang"}
             valuesTitleKey={"lang"}
             required={false}
-            customClass={"uppercase text-sm bg-transparent w-20 appearance-none shadow-none border border-transparent rounded-md pl-3 text-light-300 focus:outline-none focus:ring-white focus:border-white sm:text-sm "}
+            customClass={"uppercase text-sm bg-transparent w-20 appearance-none shadow-none border border-transparent rounded-md pl-3 text-light-300 focus:outline-none  sm:text-sm "}
           />
         {/if}
       </div>

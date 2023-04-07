@@ -49,7 +49,7 @@
       ? 'flex'
       : 'hidden'}"
   >
-    {$translate.form_sent}
+    {$translate?.form_sent}
   </div>
   {#if !formStatus}
     <div class="flex flex-wrap my-4">
@@ -59,13 +59,13 @@
             class="block text-blueGray-600 text-xs font-bold mb-2"
             for="grid-name"
           >
-            {$translate.name}
+            {$translate?.name}
           </label>
           <Input
             bind:value={name}
             type="text"
             autocomplete="name"
-            placeholder={$translate.name}
+            placeholder={$translate?.name}
           />
         </div>
       </div>
@@ -76,12 +76,12 @@
             class="block text-blueGray-600 text-xs font-bold mb-2"
             for="grid-name"
           >
-            {$translate.mail}
+            {$translate?.mail}
           </label>
           <Input
             bind:value={email}
             bind:isValid={email}
-            placeholder={$translate.mail}
+            placeholder={$translate?.mail}
             type="email"
           />
         </div>
@@ -92,12 +92,12 @@
             class="block text-blueGray-600 text-xs font-bold mb-2"
             for="grid-name"
           >
-            {$translate.phone}
+            {$translate?.phone}
           </label>
           <PhoneInput
             bind:dialCode
             bind:value={phone}
-            placeholder={$translate.phone}
+            placeholder={$translate?.phone}
             name="phone"
             autocomplete="phone"
           />
@@ -109,9 +109,9 @@
             class="block text-blueGray-600 text-xs font-bold mb-2"
             for="grid-name"
           >
-            {$translate.subject}
+            {$translate?.subject}
           </label>
-          <Input bind:value={subject} placeholder={$translate.subject} />
+          <Input bind:value={subject} placeholder={$translate?.subject} />
         </div>
       </div>
 
@@ -121,17 +121,17 @@
             class="block text-blueGray-600 text-xs font-bold mb-2"
             for="grid-name"
           >
-            {$translate.note}
+            {$translate?.note}
           </label>
-          <Textarea bind:value={message} placeholder={$translate.note} />
+          <Textarea bind:value={message} placeholder={$translate?.note} />
         </div>
 
         <div
           class="alert-warn text-sm contact__msg {warn == true ? '' : 'hidden'}"
           role="alert"
         >
-          {name ? "" : $translate.name_required}
-          {phone ? "" : $translate.phone_required}
+          {name ? "" : $translate?.name_required}
+          {phone ? "" : $translate?.phone_required}
         </div>
       </div>
     </div>
@@ -144,7 +144,7 @@
         class="bg-primary disabled:bg-primary/70 text-white active:bg-bred-400 font-bold  text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 "
         type="button"
       >
-        {$translate.send}
+        {$translate?.send}
       </button>
     </div>
   </div>

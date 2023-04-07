@@ -3,7 +3,7 @@
   import { useLocation, link } from "svelte-navigator";
   import { lang, groups, treatments, translate, modal } from "$services/store";
   import PopupButton from "$components/Buttons/PopupButton.svelte";
-
+console.log($lang,"sddf")
   const location = useLocation();
 </script>
 
@@ -22,14 +22,14 @@
     <div class="flex font-medium justify-evenly self-center w-full px-28 z-50">
       {#if $translate}
         <a use:link href={`/${$lang}/home`} class=""
-          ><span>{$translate.homePage} </span></a
+          ><span>{$translate?.homePage} </span></a
         >
-        <a use:link href={`/${$lang}/about`} class="">{$translate.about}</a>
+        <a use:link href={`/${$lang}/about`} class="">{$translate?.about}</a>
 
         <div class="dropdown inline-block relative z-20">
           <button class="bg-white rounded inline-flex items-center rounded-xl">
             <div class="flex">
-              <span>{$translate.treatments} </span>
+              <span>{$translate?.treatments} </span>
               <div class="p-[0.3rem]">{@html Svg.angleDown}</div>
             </div>
           </button>
@@ -89,13 +89,13 @@
         ><span>DETOX </span></a
       >
       <a use:link href={`/${$lang}/contact`} class=""
-      ><span>{$translate.contact} </span></a
+      ><span>{$translate?.contact} </span></a
     >
       {/if}
     </div>
     {#if $translate}
       <div class="w-1/4 flex flex-col justify-center">
-        <PopupButton buttonText={$translate.book_an_appointment}
+        <PopupButton buttonText={$translate?.book_an_appointment}
         customCss="btn py-4 px-2 rounded-sm bg-primary text-white font-semibold uppercase"  
         />
       </div>

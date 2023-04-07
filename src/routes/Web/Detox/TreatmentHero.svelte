@@ -6,9 +6,9 @@ export let treatment
 </script>
 {#if $translate}
 <div class="flex text-lg text-green-800 pt-48">
-  <a use:link href={`/${$lang}/home`}> {$translate.homePage} </a>
+  <a use:link href={`/${$lang}/home`}> {$translate?.homePage} </a>
   <div class=" w-1 h-1 m-3 mt-3 bg-green-800  rounded-full" />
-  {$translate.treatments}
+  {$translate?.treatments}
   <div class=" w-1 h-1 m-3 mt-3 bg-green-800  rounded-full" />
   {treatment.title}
 </div>

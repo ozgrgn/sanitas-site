@@ -124,13 +124,13 @@
           use:link
           on:click={() => changeNavStatus()}
           class="flex items-center px-2  mt-5  h-[2rem] bg-white"
-          href={`/${$lang}/about`}>{$translate.about}</a
+          href={`/${$lang}/about`}>{$translate?.about}</a
         >
         <a
           use:link
           on:click={() => changeNavStatus()}
           class="flex items-center px-2   h-[2rem] bg-white"
-          href={`/${$lang}/contact`}>{$translate.contact}</a
+          href={`/${$lang}/contact`}>{$translate?.contact}</a
         >
         
         <a
@@ -144,7 +144,7 @@
         <div class="dropdown px-2 py-2 inline-block relative z-20">
           <button class="bg-white rounded inline-flex items-center rounded-xl">
             <div class="flex">
-              <span>{$translate.treatments} </span>
+              <span>{$translate?.treatments} </span>
               <div class="p-[0.4rem]">{@html Svg.angleDown}</div>
             </div>
           </button>
@@ -214,15 +214,15 @@
     <div class="flex font-medium justify-evenly self-center w-full px-28 z-50">
       {#if $translate}
         <a use:link href={`/${$lang}/home`} class=""
-          ><span>{$translate.homePage} </span></a
+          ><span>{$translate?.homePage} </span></a
         >
-        <a use:link href={`/${$lang}/about`} class="">{$translate.about}</a>
+        <a use:link href={`/${$lang}/about`} class="">{$translate?.about}</a>
         <a use:link href={`/${$lang}/faqs`} class="">FAQ</a>
 
         <div class="dropdown inline-block relative z-20">
           <button class="bg-white rounded inline-flex items-center rounded-xl">
             <div class="flex">
-              <span>{$translate.treatments} </span>
+              <span>{$translate?.treatments} </span>
               <div class="p-[0.3rem]">{@html Svg.angleDown}</div>
             </div>
           </button>
@@ -280,7 +280,7 @@
 
         <a use:link href={`/${$lang}/detox`} class=""><span>DETOX </span></a>
         <a use:link href={`/${$lang}/contact`} class=""
-          ><span>{$translate.contact} </span></a
+          ><span>{$translate?.contact} </span></a
         >
       {/if}
     </div>
@@ -289,7 +289,7 @@
         <button
           on:click={() => modal.set(!$modal)}
           class="btn py-4 px-2 rounded-sm bg-primary text-white font-semibold uppercase"
-          >{$translate.book_an_appointment}</button
+          >{$translate?.book_an_appointment}</button
         >
       </div>
     {/if}
