@@ -21,13 +21,7 @@
       window.scrollTo(0, 0);
     }
   }
-  const langTrigger = (_lang) => {
-    document.documentElement.setAttribute("lang", _lang);
-    setTimeout(() => {
-      lang.set(_lang);
-      // window.location.reload();
-    }, 1); // cause svelte is faster than browser
-  };
+
   let active = false;
   const changeNavStatus = () => {
     setTimeout(() => {

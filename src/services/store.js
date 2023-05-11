@@ -6,6 +6,7 @@ export const general = writable(null);
 export const translate = writable(null);
 export const features = writable(null);
 export const langs = writable(null);
+export const lang = writable("en");
 
 
 // function isLocalStorageAvailable() {
@@ -33,19 +34,25 @@ export const langs = writable(null);
 
 // function isLocalStorageAvailable() {
 //   try {
-const _lang =
-  localStorage.getItem("lang") && localStorage.getItem("lang") != "null"
-    ? localStorage.getItem("lang")
-    : (navigator.language || navigator.userLanguage).split("-")[0];
-if (_lang != "en" && _lang != "ru" && _lang != "de") {
-  _lang = "en"
-}
 
-export const lang = writable(_lang);
-lang.subscribe((value) => {
-  document.documentElement.setAttribute("lang", value);
-  localStorage.setItem("lang", value);
-});
+
+
+
+
+
+// const _lang =
+//   localStorage.getItem("lang") && localStorage.getItem("lang") != "null"
+//     ? localStorage.getItem("lang")
+//     : (navigator.language || navigator.userLanguage).split("-")[0];
+// if (_lang != "en" && _lang != "ru" && _lang != "de") {
+//   _lang = "en"
+// }
+
+// export const lang = writable(_lang);
+// lang.subscribe((value) => {
+//   document.documentElement.setAttribute("lang", value);
+//   localStorage.setItem("lang", value);
+// });
 
 export const modal = writable(null);
 export let perma = writable(null);

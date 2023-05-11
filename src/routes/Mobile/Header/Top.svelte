@@ -6,11 +6,8 @@
   let newLang;
   const langTrigger = (_lang) => {
     lang.set(_lang);
-    let splittedPathName = window.location.pathname.split("/");
     navigate(
-      `/${_lang}/${splittedPathName[2] ? splittedPathName[2] : ""}${
-        splittedPathName[3] ? "/" + splittedPathName[3] : ""
-      }`
+      `/${_lang}/home}`
     );
   };
 </script>
@@ -106,7 +103,7 @@
        
         {#if $langs}
           <LangSelect
-            value={newLang}
+            value={$lang}
             change={(value) => langTrigger(value)}
             values={$langs}
             title={"Lang"}

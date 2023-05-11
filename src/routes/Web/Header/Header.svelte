@@ -3,10 +3,14 @@
   import { useLocation, link } from "svelte-navigator";
   import { lang, groups, treatments, translate, modal } from "$services/store";
   import PopupButton from "$components/Buttons/PopupButton.svelte";
-console.log($lang,"sddf")
   const location = useLocation();
-</script>
 
+$: {
+  if ($location) {
+    window.scrollTo(0, 0);
+  }
+}
+</script>
 <!-- <Modal
   classContent="modal-payment-item bg-[#f5f5f5] rounded text-white w-full"
   styleWindow={{ width: "75% !important", "max-width": "550px !important" }}

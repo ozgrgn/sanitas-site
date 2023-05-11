@@ -9,17 +9,14 @@
   console.log($treatments, "treatmenteesss");
   const params = useParams();
   console.log($params.treatment, "params");
-  // const getTreatment = async () => {
-  //   treatment=undefined
-  //   let response = await RestService.getTreatmentViaPerma($params.treatment);
-  //   treatment = response["treatment"];
 
-  // };
   let treatment;
-  const getTreatment = (perma,lang) => {
-    treatment = $treatments.find((x) => x.perma == perma.treatment && x.lang==lang);
+  const getTreatment = async () => {
+    let response = await RestService.getTreatmentViaPerma($params.treatment);
+    treatment = response["treatment"];
+    console.log(treatment,"treatment")
   };
-  $: getTreatment($params,$lang);
+  $: getTreatment($params);
 </script>
 
 <svelte:head>

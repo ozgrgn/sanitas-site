@@ -1,5 +1,5 @@
 <script>
-  import { link } from "svelte-navigator";
+  import { link,navigate } from "svelte-navigator";
 
   import Svg from "../../../assets/svg.json";
   import LangSelect from "../../../components/Form/LangSelect.svelte";
@@ -13,11 +13,8 @@
   } from "$services/store";
   const langTrigger = (_lang) => {
     lang.set(_lang);
-    let splittedPathName = window.location.pathname.split("/");
     navigate(
-      `/${_lang}/${splittedPathName[2] ? splittedPathName[2] : ""}${
-        splittedPathName[3] ? "/" + splittedPathName[3] : ""
-      }`
+      `/${_lang}/home`
     );
   };
 </script>

@@ -22,6 +22,7 @@
   } from "$services/store";
   import FaqIndex from "./FAQ/FaqIndex.svelte";
   import DetoxDetailIndex from "./Detox/DetoxDetailIndex.svelte";
+  import WhatsappButton from "$components/Buttons/WhatsappButton.svelte";
   const getGroups = async (lang) => {
     let response = await RestService.getGroups(undefined, undefined, lang);
     groups.set(response["groups"]);
@@ -75,6 +76,11 @@
 
         <Route path="" component={Index} />
       </Router>
+      <div
+			class="w-56 z-[100000000] rounded  text-white bottom-5 left-3 md:left-2 transition-all duration-1000 fixed "
+		>
+      <WhatsappButton {general}/>
+      </div>
     {/if}
   </div>
   <Footer />
