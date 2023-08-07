@@ -20,7 +20,7 @@
 </script>
 
 {#if $general && $translate}
-  <footer class="relative bg-primary" aria-labelledby="footer-heading">
+  <footer class="relative bg-primary mt-5" aria-labelledby="footer-heading">
     <div class="max-w-7xl mx-auto py-12 ">
       <div class="pb-8 md:grid xl:grid-cols-6 xl:gap-2">
         <div class="md:grid md:grid-cols-2 gap-16 xl:col-span-4">
@@ -37,6 +37,7 @@
                   <p class=" px-2 pt-5 text-md tracking-tight text-gray-200 ">
                     {$general?.shortDesc}
                   </p>
+                  <a href="https://www.tursab.org.tr/tr/ddsv" target="_blank" ><img class="h-10 mt-4" src="/assets/tursab-dvs-7996.png" alt=""  /></a>
                 </div>
               </div>
             </div>
@@ -52,7 +53,7 @@
                 <div class="grid grid-cols-2 ">
                   <div class="">
                     <ul class="mt-4 space-y-1 px-2">
-                      {#each Array(6) as treatment, i}
+                      {#each Array(5) as treatment, i}
                         {#if $groups && $groups[i]}
                           <li>
                             <a
@@ -68,15 +69,15 @@
                     </ul>
                   </div>
                   <ul class="mt-4 space-y-1 px-2">
-                    {#each Array(6) as treatment, i}
-                      {#if $groups && $groups[i + 6]}
+                    {#each Array(5) as treatment, i}
+                      {#if $groups && $groups[i + 5]}
                         <li>
                           <a
                             use:link
-                            href="/{$lang}/departments/{$groups[i + 6].perma}"
+                            href="/{$lang}/departments/{$groups[i + 5].perma}"
                             class="text-base text-gray-200 hover:text-white"
                           >
-                            {$groups[i + 6].title}
+                            {$groups[i + 5].title}
                           </a>
                         </li>
                       {/if}
@@ -102,10 +103,10 @@
                       {$general?.phone2}
                     </a>
                   </p>
-                  <p class=" pt-5 text-md tracking-tight text-gray-200 ">
+                  <p class=" pt-4 text-md tracking-tight text-gray-200 ">
                     <a href="mailto:{$general?.email1}"> {$general?.email1}</a>
                   </p>
-                  <p class=" pt-5 text-md tracking-tight text-gray-200 ">
+                  <p class=" pt-4 text-md tracking-tight text-gray-200 ">
                     {$general?.address1}
                     {$general?.address2}
                   </p>

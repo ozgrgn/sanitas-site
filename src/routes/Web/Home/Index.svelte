@@ -6,10 +6,11 @@
   import HomeTreatmentsGroup from "./HomeTreatmentsGroup.svelte";
   import { lang, general,translate } from "$services/store";
   import RestService from "$services/rest";
+  import LogoSlider from "$components/Sliders/LogoSlider.svelte";
 
   let sliders;
   let faqs = [];
-
+let referenceLogos;
   const getSliders = async (lang) => {
     let response = await RestService.getSliders(lang);
     sliders = response["sliders"];
@@ -21,6 +22,13 @@
     faqs[0].active = true;
   };
   $:getFaqs($lang);
+  const getReferenceLogos = async (lang) => {
+    let response = await RestService.getReferenceLogos(lang);
+    referenceLogos = response["referenceLogos"];
+    console.log(response,"responses")
+    referenceLogos[0].active = true;
+  };
+  $:getReferenceLogos($lang);
 </script>
 
 <svelte:head>
@@ -38,6 +46,10 @@
     </div>
   </div>
   <HomeTreatmentsGroup />
+  {#if referenceLogos && referenceLogos[0]}
+  <div class="mt-10">
+  <LogoSlider logoSlides={referenceLogos}/></div>
+  {/if}
   <div class=" mt-20">
     <Faq {faqs} translate={$translate} />
   </div>

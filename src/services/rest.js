@@ -26,6 +26,15 @@ const getFeatures = (lang) => {
   }
   return Http.get(`${ENV.API_URL}/feature`, { ...data });
 };
+// REFERENCE LOGO
+const getReferenceLogos = (lang) => {
+  let data = {};
+
+  if (lang) {
+    data.lang = lang;
+  }
+  return Http.get(`${ENV.API_URL}/referenceLogo`, { ...data });
+};
 // GROUPS
 const getGroups = (limit, skip, lang) => {
   let data = {};
@@ -149,6 +158,8 @@ export default {
 
   //FEATURES
   getFeatures,
+  //REFERENCELOGO
+  getReferenceLogos,
 
   //generals
   getGenerals,

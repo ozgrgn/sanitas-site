@@ -190,7 +190,10 @@
         <p class="mt-8 text-sm text-center pt-2 text-white md:mt-0 md:order-1">
           {$general?.copright}
         </p>
-     
+        <div class="w-full flex justify-center">
+        <a href="https://www.tursab.org.tr/tr/ddsv" target="_blank" ><img class="h-10 mt-4" src="/assets/tursab-dvs-7996.png" alt=""  /></a>
+      </div>
     </div>
+
   </footer>
 {/if}

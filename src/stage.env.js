@@ -1,5 +1,5 @@
 export const env = {
-  API_URL:  "https://sanitas-api-alzv7ikgpa-ew.a.run.app",
+  API_URL:  "http://localhost:8080",
 
 };
 export default env
