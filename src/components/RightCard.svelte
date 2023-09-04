@@ -6,7 +6,7 @@
   export let value;
 </script>
 
-<div class="relative flex flex-col rounded-md border-b">
+<div class="relative flex flex-col rounded-md border-b bg-white">
   <div class="h-40"
   on:mouseover={() => (value.hover = true)}
   on:mouseout={() => (value.hover = false)}

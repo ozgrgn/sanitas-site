@@ -6,9 +6,12 @@
   import { lang, general, translate } from "$services/store";
   import RestService from "$services/rest";
   import MobMainSlider from "$components/Sliders/MobMainSlider.svelte";
+  import LogoSlider from "$components/Sliders/LogoSlider.svelte";
 
   let sliders;
   let faqs = [];
+  let referenceLogos;
+
   const getSliders = async (lang) => {
     let response = await RestService.getSliders(lang);
     sliders = response["sliders"];
@@ -20,6 +23,14 @@
     faqs[0].active = true;
   };
   $: getFaqs($lang);
+
+  const getReferenceLogos = async (lang) => {
+    let response = await RestService.getReferenceLogos(lang);
+    referenceLogos = response["referenceLogos"];
+    console.log(response,"responses")
+    referenceLogos[0].active = true;
+  };
+  $:getReferenceLogos($lang);
 </script>
 
 <svelte:head>
@@ -40,5 +51,9 @@
   <div class=" mt-10">
     <Faq {faqs} translate={$translate} />
   </div>
-  <Reviews />
+  {#if referenceLogos && referenceLogos[0]}
+
+  <div class=" px-5">
+    <LogoSlider logoSlides={referenceLogos}/></div>
+    {/if}  <Reviews />
 {/if}

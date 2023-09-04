@@ -134,7 +134,14 @@
           class="flex items-center px-2  w-full h-[2rem] bg-white"
           ><span>DETOX </span></a
         >
-
+        {#if $translate?.health_tourism}
+        <a
+        use:link
+        on:click={() => changeNavStatus()}
+        class="flex items-center px-2   h-[2rem] bg-white"
+        href={`/${$lang}/health-tourism`}>{$translate?.health_tourism}</a
+      >
+      {/if}
         <div class="dropdown px-2 py-2 inline-block relative z-20">
           <button class="bg-white rounded inline-flex items-center rounded-xl">
             <div class="flex">

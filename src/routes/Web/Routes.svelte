@@ -24,6 +24,7 @@
   import FaqIndex from "./FAQ/FaqIndex.svelte";
   import DetoxDetailIndex from "./Detox/DetoxDetailIndex.svelte";
   import WhatsappButton from "$components/Buttons/WhatsappButton.svelte";
+  import HealthIndex from "./HealthTourism/HealthIndex.svelte";
   const getGroups = async (lang) => {
     let response = await RestService.getGroups(undefined, undefined, lang);
     groups.set(response["groups"]);
@@ -70,6 +71,8 @@
       <Router>
         <Route path="home" component={Index} />
         <Route path="about" component={AboutIndex} />
+        <Route path="health_tourism" component={HealthIndex} />
+
         <Route path="contact" component={ContactIndex} />
         <Route path="faqs" component={FaqIndex} />
         <Route path="detox" component={DetoxDetailIndex} />

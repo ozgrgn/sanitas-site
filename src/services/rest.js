@@ -26,6 +26,16 @@ const getFeatures = (lang) => {
   }
   return Http.get(`${ENV.API_URL}/feature`, { ...data });
 };
+// FEATURES
+const getSteps = (lang) => {
+  let data = {};
+
+  if (lang) {
+    data.lang = lang;
+  }
+  return Http.get(`${ENV.API_URL}/step`, { ...data });
+};
+
 // REFERENCE LOGO
 const getReferenceLogos = (lang) => {
   let data = {};
@@ -51,7 +61,6 @@ const getGroups = (limit, skip, lang) => {
   return Http.get(`${ENV.API_URL}/group`, { ...data });
 };
 
-
 //Treatment
 const getTreatments = (lang, group, isActive) => {
   let data = {};
@@ -76,6 +85,15 @@ const getAbouts = (lang) => {
   }
   return Http.get(`${ENV.API_URL}/about`, { ...data });
 };
+// Health
+const getHealths = (lang) => {
+  let data = {};
+
+  if (lang) {
+    data.lang = lang;
+  }
+  return Http.get(`${ENV.API_URL}/health`, { ...data });
+};
 //Generals
 const getTranslates = (lang) => {
   let data = {};
@@ -84,7 +102,6 @@ const getTranslates = (lang) => {
   }
   return Http.get(`${ENV.API_URL}/translate`, { ...data });
 };
-
 
 //Generals
 const getGenerals = (lang) => {
@@ -145,9 +162,7 @@ const getReviews = (lang, isActive) => {
 };
 
 const addRes = (data) => {
-
   return Http.post(`${ENV.API_URL}/reservation`, { ...data });
-
 };
 export default {
   addRes,
@@ -158,6 +173,8 @@ export default {
 
   //FEATURES
   getFeatures,
+  //Step
+  getSteps,
   //REFERENCELOGO
   getReferenceLogos,
 
@@ -174,6 +191,8 @@ export default {
   getTreatmentViaPerma,
   //about
   getAbouts,
+  //health
+  getHealths,
   //translate
   getTranslates,
   //contacts
@@ -181,5 +200,5 @@ export default {
   //faqs
   getFaqs,
   //reviews
-  getReviews
+  getReviews,
 };

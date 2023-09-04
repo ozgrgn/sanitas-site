@@ -5,12 +5,13 @@
   import PopupButton from "$components/Buttons/PopupButton.svelte";
   const location = useLocation();
 
-$: {
-  if ($location) {
-    window.scrollTo(0, 0);
+  $: {
+    if ($location) {
+      window.scrollTo(0, 0);
+    }
   }
-}
 </script>
+
 <!-- <Modal
   classContent="modal-payment-item bg-[#f5f5f5] rounded text-white w-full"
   styleWindow={{ width: "75% !important", "max-width": "550px !important" }}
@@ -18,7 +19,7 @@ $: {
   styleCloseButton={{ top: "1.2rem !important" }}
   show={$paymentItemModal}
 /> -->
-<div class="container mx-auto h-20 border-b flex flex-col justify-center ">
+<div class="container mx-auto h-20 border-b flex flex-col justify-center">
   <div class="flex justify-between items-center">
     <a use:link href={`/${$lang}/home`} class="z-20">
       <img class="" src="/assets/img/logo/sanitas-logo.png" alt="" />
@@ -64,7 +65,7 @@ $: {
                       </div>
                     </a>
                     <ul
-                      class="dropdown-content bg-white rounded absolute hidden text-primary  ml-56 -mt-12"
+                      class="dropdown-content bg-white rounded absolute hidden text-primary ml-56 -mt-12"
                     >
                       {#if $treatments}
                         {#each $treatments as treatment}
@@ -88,22 +89,25 @@ $: {
             {/if}
           </ul>
         </div>
-     
-        <a use:link href={`/${$lang}/detox`} class=""
-        ><span>DETOX </span></a
-      >
-      <a use:link href={`/${$lang}/contact`} class=""
-      ><span>{$translate?.contact} </span></a
-    >
+
+        <a use:link href={`/${$lang}/detox`} class=""><span>DETOX </span></a>
+        {#if $translate?.health_tourism}
+          <a use:link href={`/${$lang}/health_tourism`}
+            >{$translate?.health_tourism}</a
+          >
+        {/if}
+        <a use:link href={`/${$lang}/contact`} class=""
+          ><span>{$translate?.contact} </span></a
+        >
       {/if}
     </div>
     {#if $translate}
       <div class="w-1/4 flex flex-col justify-center">
-        <PopupButton buttonText={$translate?.book_an_appointment}
-        customCss="btn py-4 px-2 rounded-sm bg-primary text-white font-semibold uppercase"  
+        <PopupButton
+          buttonText={$translate?.book_an_appointment}
+          customCss="btn py-4 px-2 rounded-sm bg-primary text-white font-semibold uppercase"
         />
       </div>
-  
     {/if}
   </div>
 </div>

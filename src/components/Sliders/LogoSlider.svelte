@@ -17,7 +17,7 @@ console.log(logoSlides,"logoslides")
 		autoplay: true,
 		breakpoints: {
 					'768': {
-						perPage: 2
+						perPage: 1
 					},
 					'1024': {
 						perPage: 3
