@@ -5,7 +5,7 @@
   </script>
   
 
-    <div class="flex flex-col h-full">
+    <div class="flex flex-col h-full overflow-hidden">
       {#if $groups}
         {#each  $groups as treatmentsGroup}
           <RightCard value={treatmentsGroup} />

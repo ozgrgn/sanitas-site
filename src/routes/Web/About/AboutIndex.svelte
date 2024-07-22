@@ -70,7 +70,7 @@ console.log($general,$translate)
       <div class=" py-10"><QuillHtml text={about?.about_right} /></div>
     {/if}
   </div>
-  <div class="-mt-28 z-20 bg-white shadow-2xl col-span-2">
+  <div class="-mt-28 z-20 bg-white shadow-2xl col-span-2 h-fit">
     <div
       class="bg-primary border-2 border-white flex flex-col justify-center w-full text-white text-center text-2xl h-16"
     >
